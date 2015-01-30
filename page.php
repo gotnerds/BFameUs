@@ -56,32 +56,51 @@ switch ($page)
 
 {
 
+	/*
 	case 1:
 		$which_page = 'generic_aboutus.htm';
 	break;
+	*/
 
 	case 2:
-    		$which_page = 'generic_contactus.htm';
-    	break;
+		$which_page = 'generic_contactus.htm';
+	break;
 
-    	case 3:
-    		$which_page = 'generic_terms.htm';
-    	break;
+	/*
+	case 3:
+		$which_page = 'generic_terms.htm';
+	break;
 
-    	case 4:
-    		$which_page = 'generic_advertise.htm';
-    	break;
+	case 4:
+		$which_page = 'generic_advertise.htm';
+	break;
+	*/
 
-    	// new pages v3 => start at >= 10
-
-    	case 10:
-    		$which_page = 'site_ranking_info.htm';
-    	break;
-
-
-    	default:
-    		header( 'Location: index.php' ) ;
-    	break;
+	// new pages v3 => start at >= 10
+	
+	/*
+	case 10:
+		$which_page = 'site_ranking_info.htm';
+	break;
+	*/
+	
+	default:
+		$sql = "SELECT * FROM page_content WHERE `page_id` = '$page'";
+		$query = mysql_query($sql);
+		$result	= mysql_fetch_array($query);
+		if( mysql_num_rows($query) > 0 ){
+			$page_title = $result['page_title'];		 
+			$page_content = html_entity_decode($result['page_content'],ENT_QUOTES);
+			$page_content = str_replace('\"','"',str_replace("\'","'",$page_content));
+			$page_content = str_replace('\\'.htmlspecialchars('"',ENT_QUOTES),htmlspecialchars('"',ENT_QUOTES),str_replace("\\".htmlspecialchars("'",ENT_QUOTES),htmlspecialchars("'",ENT_QUOTES),$page_content));
+			$page_content = stripslashes($page_content);	
+			$which_page = 'page.htm';					
+		} else {		
+			header( 'Location: index.php' ) ;
+			exit;		
+		} 	 
+	break;
+	
 }
 
 if ( $which_page == 'site_ranking_info.htm' ) {
