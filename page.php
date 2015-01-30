@@ -14,8 +14,44 @@
 include_once ('classes/config.php');
 include_once ('classes/sessions.php');
 
-$page 	= (int) mysql_real_escape_string( $_GET['page'] );
+$page 	= (int) mysql_real_escape_string( $_GET['page'] ); 
 
+// Send contact mail
+if($_POST['contactSubmit']){
+	$name = trim(mysql_real_escape_string($_POST['name']));
+	$email = trim(mysql_real_escape_string($_POST['email']));
+	$txt_message = trim(mysql_real_escape_string($_POST['message'])); 
+	if ( strtolower($_POST['captext']) != strtolower($_SESSION['security_code']) ) {	
+		$error_message = "Security code not valid, please try again";
+		$message_type = $config["notification_error"];
+		$blk_notification = 1;				
+	} else{
+		if( $name == "" || $email == "" || $txt_message == "" ){	
+			$error_message = "Fill in all required fields";
+			$message_type = $config["notification_error"];
+			$blk_notification = 1;	
+		} else {
+			// send email
+			$email_template	= 'email_templates/newcontact.htm';
+			$subject 		= "Recieved a contact message from $name";
+			$to 			= $config["notifications_from_email"];
+			$from 			= $email;
+			//send email template to TBS for rendering of variable inside
+			$template 		= $email_template;
+			$TBS 			= new clsTinyButStrong;
+			$TBS->NoErr 	= true;
+			$TBS->LoadTemplate("$template");
+			$TBS->tbs_show(TBS_NOTHING);
+			$message 		= $TBS->Source;		
+			//load postage.php
+			define('access',true);
+			include ('includes/postage.php');		
+			$error_message = "Thank You. Mail sent successfully.";
+			$message_type = $config["notification_success"];
+			$blk_notification = 1;		
+		}	
+	}
+}
 switch ($page)
 
 {

@@ -3,7 +3,7 @@ session_start();
 
 class CaptchaSecurityImages {
 
-   var $font = 'DoradoHeadline.ttf';
+   var $font = './DoradoHeadline.ttf';
 
    function generateCode($characters) {
       /* list all possible characters, similar looking characters and vowels have been removed */

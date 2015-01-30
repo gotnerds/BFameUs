@@ -833,4 +833,9 @@ $config['word_success']				= 'Success';
 $config['word_error']				= 'Error !';
 $config['agree_to_terms']			= 'You must agree to our terms';
 
+// Contact Page
+$lang_contact_name = 'Name';
+$lang_contact_email	= 'Email';
+$lang_contact_message = 'Message';
+
 ?>

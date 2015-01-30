@@ -1,0 +1,107 @@
+<div id="column-wide">
+    
+	<div id="generic-container">
+  
+		<!--*********DO NOT EDIT ABOVE THIS LINE**********-->
+	  
+		<h1 style="border-bottom:1px solid #dddcdc;">Contact Us</h1>
+	  
+		<!--
+		
+		<p>This is a demo page only.</p>
+		
+		<p>You can add your "Contact Us" content here!</p>
+		
+		<p>It is recommended that you have a basic knowledge of <a href="http://www.w3.org/MarkUp/Guide/">HTML</a> before editing this page.  It would also help you to have some knowledge of <a href="http://www.w3.org/Style/Examples/011/firstcss">CSS.</a></p>
+		
+		<p>You can edit this page by opening <strong>themes/default/templates/generic_contactus.htm</strong> in your favorite text or WYSIWYG editor!  Be sure to delete this line after editing.</p>	  
+		
+		-->		
+		<form method="post" name="contactform" class="FormGeneric" onSubmit="return capCheck(this);">		
+			<table>			
+				<tr>		
+					<td width="200"><strong>[var.lang_contact_name]</strong>&nbsp;<span style="color: red;">*</span></td>
+					<td><input type="text" name="name" value="[var.name]"/></td>
+				</tr>
+				<tr><td colspan="2" height="10"></td></tr>
+				<tr>		
+					<td><strong>[var.lang_contact_email]</strong>&nbsp;<span style="color: red;">*</span></td>
+					<td><input type="text" name="email" value="[var.email]"/></td>
+				</tr>
+				<tr><td colspan="2" height="10"></td></tr>
+				<tr>		
+					<td><strong>[var.lang_contact_message]</strong>&nbsp;<span style="color: red;">*</span></td>
+					<td><textarea name="message">[var.txt_message]</textarea></td>
+				</tr>
+				<tr><td colspan="2" height="10"></td></tr>
+				<tr>		
+					<td><strong>[var.lang_enter_security]</strong></td>
+					<td><input type="text" value="" name="captext" size="20" maxlength="6" /></td>
+				</tr>
+				<tr><td colspan="2" height="10"></td></tr>
+				<tr>		
+					<td><strong><a onclick="refresh_security_image(); return false;" style="cursor:pointer;">[var.lang_refresh_image]</a></strong></td>
+					<td><img src="includes/captcha.php" border="0" id="verificiation_image" /></td>
+				</tr>			
+				<tr><td colspan="2" height="10"></td></tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="contactSubmit" value="submit"/></td>
+				</tr>								
+			</table>			
+		 
+		</form>		
+		
+		<script type="text/javascript">
+			<!--
+			function refresh_security_image() {				
+				var new_url = new String("[var.base_url]/includes/captcha.php?width=132&height=36&charcators=");
+				new_url = new_url.substr(0, new_url.indexOf("width=") + 37);
+				// we need a random new url so this refreshes
+				var chr_str = "123456789";
+				for(var i=0; i < 6; i++)
+				new_url = new_url + chr_str.substr(Math.floor(Math.random() * 2), 1);
+				document.getElementById("verificiation_image").src = new_url;
+			}
+			-->
+		</script>
+
+		<!-- captch start -->
+		<script type="text/javascript" id="clientEventHandlersJS" language="javascript">
+			<!--
+			function capCheck(theForm) {
+				var xmlhttp;
+				var sReply;
+				DataToSend = "action=process&captext=" + escape(theForm.captext.value);
+				if (window.XMLHttpRequest) {
+					xmlhttp=new XMLHttpRequest();
+					xmlhttp.open("POST",'includes/process.php',false);
+					xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					xmlhttp.send(DataToSend);
+					sReply = xmlhttp.responseText;
+				} else if (window.ActiveXObject) {
+					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+					xmlhttp.open("POST",'includes/process.php',false);
+					xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					xmlhttp.send(DataToSend);
+					sReply = xmlhttp.responseText;
+				}
+				if (sReply == "good") {
+					return true;
+				} else if (sReply == "bad") {
+					alert("Security code not valid, please try again"); return false;
+				} else if (sReply == "") {
+					alert("You must enter the security code"); return false;
+				} else {
+					alert("Error"); return false;
+				}
+			}
+		-->
+		</script>
+		<!-- captch end -->
+	  
+		<!--*********DO NOT EDIT BELOW THIS LINE**********-->
+
+	</div>
+
+</div>
