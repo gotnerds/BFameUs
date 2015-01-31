@@ -745,7 +745,7 @@ $config['invite_email_subject']           = 'Hey Come Join the Fun!';
 
 
 //sucess messages
-$config['album_image_message']		= 'Audio Album Image Uploaded';
+$config['album_image_message']			  = 'Audio Album Image Uploaded';
 $config['registration_success']           = 'Registration successful, check your email to complete';
 $config['video_comments_success']         = 'Comments have been added';
 $config['item_has_been_removed']          = 'item has been removed';
@@ -810,8 +810,8 @@ $config['file_write_error']               = 'Error writing file - check that the
 $config['file_write_error_general']       = 'Error writing file';
 $config['file_chmod_error']               = 'Could not change file permissions';
 $config['picture_copy_error']             = 'Error copying. Please try again';
-$config['confirm_pass_not_match']		= 'Your passwords do not match';
-$config['invalid_domain_name']		= 'Invalid site base url';
+$config['confirm_pass_not_match']		  = 'Your passwords do not match';
+$config['invalid_domain_name']			  = 'Invalid site base url';
 $config['incorrect_password']		      = 'Incorrect password';
 $config['select_both_from_to']            = 'You must select both "FROM" and "TO"';
 $config['file_size_limit_error']          = 'File size error';
@@ -826,16 +826,22 @@ $config['select_an_album']                = 'Please Select an ablbum or Enter a 
 $config['username_4_chars']               = 'User names must be more than 4 chrs.!';
 $config['username_not_allowed']           = 'User name is not allowed';
 $config['username_is taken']              = 'User name is already taken';
-$config['username_to_long']              	= 'User name is too long';
+$config['username_to_long']               = 'User name is too long';
 
 $config['email_already_exists']           = 'Email address has already been used';
-$config['word_success']				= 'Success';
-$config['word_error']				= 'Error !';
-$config['agree_to_terms']			= 'You must agree to our terms';
+$config['word_success']					  = 'Success';
+$config['word_error']					  = 'Error !';
+$config['agree_to_terms']				  = 'You must agree to our terms';
 
 // Contact Page
-$lang_contact_name = 'Name';
-$lang_contact_email	= 'Email';
-$lang_contact_message = 'Message';
+$lang_contact_name 			= 'Name';
+$lang_contact_email			= 'Email';
+$lang_contact_message 		= 'Message';
+
+// Admin
+$lang_pages 				= 'Pages';
+$lang_page_title 			= 'Page Title';
+$lang_page_id 				= 'Page ID';
+$lang_page_slug 			= 'Page Slug';
 
 ?>

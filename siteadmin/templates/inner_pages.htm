@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>List Pages</title>
+
+</head>
+
+<body topmargin="0">
+  <div align="center">
+    <table border="0" cellpadding="0" cellspacing="0" width="758" bgcolor="#FFFFFF">
+      <tr>
+        <td style="border-style: solid; border-width: 0px; " bordercolor="#4B87C2" width="97%" bgcolor="#9FBFDF">
+          <table border="0" width="100%" id="table12" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>
+                <div align="center">
+                  <table border="0" width="100%" id="table13" cellspacing="0" cellpadding="0" height="222">
+                    <form id="form_results" action="members.php" method="post"> 
+                      <tr>
+                        <!--[onload_23;block=tr;when [var.show]=2;comm]--> 
+                        <td width="32%" height="25" bgcolor="#FFFFFF" align="center" class="default_text_blue" background="images/background_tables.png" valign="middle"><!--[var.lang_page_title;comm]--></td>
+                        <td width="10%" height="25" bgcolor="#FFFFFF" align="center" class="default_text_blue" background="images/background_tables.png" valign="middle"><!--[var.lang_page_id;comm]--></td>
+                        <td width="10%" height="25" bgcolor="#FFFFFF" align="center" class="default_text_blue" background="images/background_tables.png" valign="middle"><!--[var.lang_page_slug;comm]--></td> 
+                        <td width="8%" height="25" bgcolor="#FFFFFF" align="center" class="default_text_blue" background="images/background_tables.png" valign="middle">&nbsp;</td>
+                      </tr>
+                      <tr> 
+                        <td width="32%" height="30" bgcolor="#FFFFFF" align="center" class="default_text"><!--[blk1.page_title;block=tr;ope=max:25;comm]--></td>
+                        <td width="10%" height="30" bgcolor="#FFFFFF" align="center" class="default_text"><!--[blk1.page_id;block=tr;comm]--></td>
+                        <td width="10%" height="30" bgcolor="#FFFFFF" align="center" class="default_text"><!--[blk1.page_slug;block=tr;comm]--></td>                         
+                        <td width="8%" height="30" bgcolor="#FFFFFF" align="center" class="default_text">
+                          <a href="[var.base_url]/edit/edit_page.php?id=[blk1.page_id;block=tr]&keepThis=true&TB_iframe=true&height=580&width=830" class="thickbox" title="[var.lang_edit]">
+                          <img border="0" src="images/icon_edit_small.gif" width="17" height="18"></a>&nbsp;<a href="list_pages.php?type=[var.type]&amp;action=0&amp;sort=[var.order_by]&amp;page=[var.current_page]&amp;delid=[blk1.page_id;block=tr]" title="[var.lang_delete_general]" onClick="return(window.confirm('[var.confirm_popup_javascript]'))"><img border="0" src="images/icon_delete.gif" width="16" height="14"></a>
+                        </td>
+                      </tr>
+                    <tr>
+                      <td width="758" height="60" bgcolor="#FFFFFF" colspan="4" class="default_menu_blue">
+                        <div id="pagination">
+                          <ul>
+                            <b>&nbsp;&nbsp;&nbsp;Page[var.total_pages]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>[var.show_pages;htmlconv=no]<!--[onload;block=tr;when [var.show]=2;comm]-->
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="115%" height="50" bgcolor="#FFFFFF" colspan="4" valign="bottom" class="default_text">
+                        <p align="center">[onload_18;block=tr;when [var.show]=1]<b>[var.lang_no_results_found]&nbsp;</b>
+                      </td>
+                    </tr> 
+                    <tr>
+                      <td width="115%" height="19" colspan="9" bgcolor="#FFFFFF">&nbsp;</td>
+                    </tr>
+                    <input type ="hidden" name="type" value="[var.show_t]">
+                  </form>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>
