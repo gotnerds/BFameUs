@@ -449,3 +449,8 @@ a:hover{
 #EditUserPopup{
 	font-size: 12px;
 }
+
+/*CUSTOM STYLING STARTS HERE */
+.arial-family{
+	font-family: arial;
+}

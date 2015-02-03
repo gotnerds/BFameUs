@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>List Pages</title>
+
+<script type="text/javascript" src="[var.base_url]/fckeditor/fckeditor.js"></script>
+ <script type="text/javascript">
+        window.onload = function()
+			{
+				var oFCKeditor = new FCKeditor( 'FCKEditor_en', 600, 400 ) ;
+				oFCKeditor.BasePath = '[var.base_url]/fckeditor/';
+				oFCKeditor.ReplaceTextarea() ;
+								
+			}
+        </script>
+</head>
+<body topmargin="0">
+  <div class="arial-family" align="left">
+  <form id="edit_page" action="#" name="edit_page" method="POST">
+    <table>
+	       <tr>
+	    	  <td>Page Title</td><td><input type="text" name="page_title" value="[var.page_title;block=tr]"></td>
+	    	</tr>
+	    	<tr>
+	    		<td>Page Content</td>
+	    		<td>
+ 					<textarea name="page_content" id="FCKEditor_en" cols="50" rows="10" style="width:100%; height:100%">[var.page_content;htmlconv=no;protect=no;]</textarea>
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td colspan="2"><input type="submit" name="submit" value="Update" class="update-page" style="margin-left:50%;"></td>
+    		</tr>
+	</table>
+	</form>
+  </div>
+</body>
+</html>

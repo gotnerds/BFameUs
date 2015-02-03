@@ -21,7 +21,7 @@ $result_active = array();
 $dashboard_header = $lang_members;
  
  
-$sort = 'row_number';
+$sort = 'page_title';
 $sort_order = 'ASC';
 $order_by_title = 2;   
  
@@ -36,8 +36,7 @@ $prev_page 		= $pagination[0]['prev_page'];//use in html navigation (src)
 $nl 			= $pagination[0]['nl'];//use in html navigation: next>>
 $pl 			= $pagination[0]['pl'];//use in html navigation: <<previous
 
-//$result_sql	= "SELECT * FROM page_content LIMIT $set_limit, $limit";
-$result_sql = "SELECT *,@curRow := @curRow + 1 AS row_number FROM `page_content` JOIN (SELECT @curRow := 0) r LIMIT $set_limit, $limit";
+$result_sql	= "SELECT * FROM page_content LIMIT $set_limit, $limit";
 
 $result_active = array();
 $query = @mysql_query($result_sql);

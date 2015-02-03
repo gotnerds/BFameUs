@@ -18,18 +18,18 @@
                     <form id="form_results" action="members.php" method="post"> 
                       <tr>
                         <!--[onload_23;block=tr;when [var.show]=2;comm]--> 
-                        <td width="32%" height="25" bgcolor="#FFFFFF" align="center" class="default_text_blue" background="images/background_tables.png" valign="middle"><!--[var.lang_page_title;comm]--></td>
-                        <td width="10%" height="25" bgcolor="#FFFFFF" align="center" class="default_text_blue" background="images/background_tables.png" valign="middle"><!--[var.lang_page_id;comm]--></td>
+                        <td width="32%" height="25" bgcolor="#FFFFFF" align="center" class="default_text_blue" background="images/background_tables.png" valign="middle"><!--[var.lang_row_id;comm]--></td>
+                        <td width="10%" height="25" bgcolor="#FFFFFF" align="center" class="default_text_blue" background="images/background_tables.png" valign="middle"><!--[var.lang_page_title;comm]--></td>
                         <td width="10%" height="25" bgcolor="#FFFFFF" align="center" class="default_text_blue" background="images/background_tables.png" valign="middle"><!--[var.lang_page_slug;comm]--></td> 
                         <td width="8%" height="25" bgcolor="#FFFFFF" align="center" class="default_text_blue" background="images/background_tables.png" valign="middle">&nbsp;</td>
                       </tr>
-                      <tr> 
-                        <td width="32%" height="30" bgcolor="#FFFFFF" align="center" class="default_text"><!--[blk1.page_title;block=tr;ope=max:25;comm]--></td>
-                        <td width="10%" height="30" bgcolor="#FFFFFF" align="center" class="default_text"><!--[blk1.page_id;block=tr;comm]--></td>
+                      <tr>                       
+                        <td width="32%" height="30" bgcolor="#FFFFFF" align="center" class="default_text"><!--[blk1.row_number;block=tr;ope=max:25;comm]--></td>
+                        <td width="10%" height="30" bgcolor="#FFFFFF" align="center" class="default_text"><!--[blk1.page_title;block=tr;ope=max:25;comm]--></td>
                         <td width="10%" height="30" bgcolor="#FFFFFF" align="center" class="default_text"><!--[blk1.page_slug;block=tr;comm]--></td>                         
                         <td width="8%" height="30" bgcolor="#FFFFFF" align="center" class="default_text">
-                          <a href="[var.base_url]/edit/edit_page.php?id=[blk1.page_id;block=tr]&keepThis=true&TB_iframe=true&height=580&width=830" class="thickbox" title="[var.lang_edit]">
-                          <img border="0" src="images/icon_edit_small.gif" width="17" height="18"></a>&nbsp;<a href="list_pages.php?type=[var.type]&amp;action=0&amp;sort=[var.order_by]&amp;page=[var.current_page]&amp;delid=[blk1.page_id;block=tr]" title="[var.lang_delete_general]" onClick="return(window.confirm('[var.confirm_popup_javascript]'))"><img border="0" src="images/icon_delete.gif" width="16" height="14"></a>
+                          <a href="[var.base_url]/edit/edit_page.php?id=[blk1.page_id;block=tr]&keepThis=true&TB_iframe=true&height=500&width=700" class="thickbox" title="[var.lang_edit_page]">
+                          <img border="0" src="images/icon_edit_small.gif" width="17" height="18"></a>&nbsp;
                         </td>
                       </tr>
                     <tr>

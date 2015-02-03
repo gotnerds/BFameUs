@@ -843,5 +843,7 @@ $lang_pages 				= 'Pages';
 $lang_page_title 			= 'Page Title';
 $lang_page_id 				= 'Page ID';
 $lang_page_slug 			= 'Page Slug';
+$lang_edit_page			    = 'Edit Page';
+$lang_row_id				= 'No:';
 
 ?>

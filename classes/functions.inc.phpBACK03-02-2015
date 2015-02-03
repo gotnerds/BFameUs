@@ -1004,4 +1004,5 @@ function run_spam_checks($owner, $email_address, $story) {
 
 }
 
+
 ?>
