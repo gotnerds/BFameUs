@@ -358,7 +358,61 @@
       </div>
 
     </form>
-    <!--[onload;block=div;when [var.show_signup]=1;comm]-->
+    <div class="social_login_block">
+        <h4>- OR -</h4>
+        <input type="button" value="" class="facebook_register" onclick="checkLoginState();">
+        <div id="fb-root"></div>
+        <script>
+          var CLICKED_FB_LOGIN=false;
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId: '1411765539123119',
+              cookie: true,
+              xfbml: true,
+              oauth: true,
+              version: 'v2.2' // use version 2.1
+            });
+            
+          };
+          (function() {
+            var e = document.createElement('script'); e.async = true;
+            e.src = document.location.protocol +
+              '//connect.facebook.net/en_US/all.js';
+            document.getElementById('fb-root').appendChild(e);
+          }());
+          
+         //This function is called when user clicks on the register by facebook button
+          function checkLoginState() {
+            //console.log("checkLoginState");
+            FB.getLoginStatus(function(response) {
+                  if (response.status === 'connected') {
+                    //Logged into your app and Facebook.
+                    //console.log("connected");
+                    window.location = "[var.base_url]"+"/facebook_extra_details.php";
+
+                  } else if (response.status === 'not_authorized') {
+                    // The person is logged into Facebook, but not your app.
+                    fb_login();
+                  } else {
+                    // The person is not logged into Facebook, so we're not sure if
+                    // they are logged into this app or not.
+                    fb_login();
+                  }
+            });
+          }
+         //Calls this function when user is not logged into fb   
+         function fb_login(){
+           FB.login(function(response) {
+                if (response.authResponse) {
+                  window.location = "[var.base_url]"+"/facebook_extra_details.php";
+                } else {
+                  console.log('User cancelled login or did not fully authorize.');
+                }
+              });
+          }
+        </script>    
+    </div>    
+    <!--[onload;block=div;when [var.show_signup]=1;comm]-->   
   </div>
 
   <script type="text/javascript">
@@ -441,6 +495,60 @@
             <li><input type="hidden" name="referer_url" value="[var.referer]"></li>
           </ul>
         </form>
+        <div class="social_login_block">
+            <h4>- OR -</h4>
+            <input type="button" value="" class="facebook_signin" onclick="checkLoginState();">
+            <div id="fb-root"></div>
+            <script>
+              var CLICKED_FB_LOGIN=false;
+              window.fbAsyncInit = function() {
+                FB.init({
+                  appId: '1411765539123119',
+                  cookie: true,
+                  xfbml: true,
+                  oauth: true,
+                  version: 'v2.2' // use version 2.1
+                });
+                
+              };
+              (function() {
+                var e = document.createElement('script'); e.async = true;
+                e.src = document.location.protocol +
+                  '//connect.facebook.net/en_US/all.js';
+                document.getElementById('fb-root').appendChild(e);
+              }());
+              
+             //This function is called when user clicks on the register by facebook button
+              function checkLoginState() {
+                //console.log("checkLoginState");
+                FB.getLoginStatus(function(response) {
+                      if (response.status === 'connected') {
+                        //Logged into your app and Facebook.
+                        //console.log("connected");
+                        window.location = "[var.base_url]"+"/facebook_extra_details.php";
+    
+                      } else if (response.status === 'not_authorized') {
+                        // The person is logged into Facebook, but not your app.
+                        fb_login();
+                      } else {
+                        // The person is not logged into Facebook, so we're not sure if
+                        // they are logged into this app or not.
+                        fb_login();
+                      }
+                });
+              }
+             //Calls this function when user is not logged into fb   
+             function fb_login(){
+               FB.login(function(response) {
+                    if (response.authResponse) {
+                      window.location = "[var.base_url]"+"/facebook_extra_details.php";
+                    } else {
+                      console.log('User cancelled login or did not fully authorize.');
+                    }
+                  });
+              }
+            </script>    
+        </div>        
         <form name="forgot" action="resendlogins.php" method="post" class="FormGeneric">
           <ul>
             <li><div class="signup-lable-new">[var.lang_send_new_pass]</div></li>

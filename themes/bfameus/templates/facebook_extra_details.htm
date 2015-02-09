@@ -1,0 +1,28 @@
+<div id="column-wide">
+    
+      <div id="generic-container" style="height: auto; overflow: hidden;">
+      
+          <h1 style="margin-left:15px;">Type your username</h1>
+          <div id="check_user" style="margin-left:15px;"></div>
+          <h3><font color="#DD0000">[var.error_message]</font></h3></center>
+          <form action="facebook_extra_details.php" method="post" name="capform">
+              <div style="width: 300px;">
+                <div style="margin-left:15px; float:left;">
+                  <b>[var.lang_user_name]:</b>
+                </div>
+                <div style="margin-right:50px; float:right;">
+                  <input type="text" name="user_name" size="20" value="[var.user_name]" maxlength="24" />&nbsp;&nbsp;<a onclick="javascript:ahahscript.ahah('[var.base_url]/join.php?action=check_user&amp;new_user_name='+ document.capform.user_name.value, 'check_user', '', 'GET', '', this);" style="cursor:pointer;">Check Availability</a>
+                </div>
+              </div>
+              <br /><br />              
+              <div>
+                <div style="margin-left:52px; margin-top:10px;">
+                  <input type="submit" class="button-form" value="[var.lang_register_now]" name="registe_r" />
+                </div>
+              </div>              
+                                        
+          </form>
+    
+      </div>
+    
+    </div>

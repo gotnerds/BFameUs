@@ -1004,4 +1004,15 @@ function run_spam_checks($owner, $email_address, $story) {
 
 }
 
+function generate_random_password($length = 6) {
+    $arr_letters = array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z");
+    $password_string = "";
+    for ($i = 0; $i < $length; $i++)
+    {
+       $random = rand(0, count($arr_letters) - 1);
+       $password_string.=$arr_letters[$random];
+    }
+    return $password_string;
+}
+
 ?>

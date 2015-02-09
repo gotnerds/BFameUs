@@ -1,0 +1,28 @@
+/* Social Media Login Styles */
+.social_login_block {
+    display: block;
+    clear: both;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 52px;
+}
+.facebook_register {
+    display: block;
+    width: 162px;
+    height: 29px;
+    cursor: pointer;
+    background: url(../images/sociallogin/fb-register.png) no-repeat;
+    text-indent: -9999px;
+    margin-top: 10px;
+    border: 0px;    
+}
+.facebook_signin {
+    display: block;
+    width: 162px;
+    height: 29px;
+    cursor: pointer;
+    background: url(../images/sociallogin/fb-signin.png) no-repeat;
+    text-indent: -9999px;
+    margin-top: 10px;
+    border: 0px;
+}

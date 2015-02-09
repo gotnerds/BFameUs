@@ -1,0 +1,1 @@
+ALTER TABLE  `member_profile` ADD  `facebook_id` BIGINT NOT NULL DEFAULT  '0' AFTER  `flag_counter`
