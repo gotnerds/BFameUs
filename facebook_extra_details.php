@@ -89,7 +89,7 @@ if($user) {
     			// send email
           		$email_template	= 'email_templates/newmembersocial.htm';
           		$subject 		= $config['email_welcome'];
-          		$to 			= "tomypaul@localmail.altd.in"; //$facebook_user_email;
+          		$to 			= $facebook_user_email;
           		$from 		= $config['notifications_from_email'];
     
           		//send email template to TBS for rendering of variable inside
