@@ -152,6 +152,33 @@ if($user) {
             @mysql_close();            
             
             header("Location: " . "myaccount.php");	//redirect to Myaccount page         
+        } else {
+            // Check with facebook email
+            $facebook_email = $user_profile['email'];
+            $sql = "SELECT user_id FROM member_profile WHERE email_address='".$facebook_email."'";
+            $query = @mysql_query($sql);
+            if(@mysql_num_rows($query) == 1) {        
+                // Set the session and redirect
+                
+                $user_sql = "SELECT user_id, user_name, user_group, password, passwordSalt, account_status FROM member_profile WHERE email_address='".$facebook_email."'";
+                $result_user = @mysql_query($user_sql);
+                $output_user = @mysql_fetch_array($result_user);
+            	
+            	@session_start();
+            	@session_register('user_id');
+            	@session_register('user_name');
+            	@session_register('user_group');
+            	$_SESSION['user_id']		= $output_user['user_id'];
+            	$_SESSION['user_name']		= $output_user['user_name'];
+            	$_SESSION['user_group']		= $output_user['user_group'];
+            	$password				= $output_user['password'];
+            	$passwordSalt			= $output_user['passwordSalt'];
+            	$loggedin				= 1;
+                
+                @mysql_close();            
+                
+                header("Location: " . "myaccount.php");	//redirect to Myaccount page         
+            }             
         }
         
         $which_page = "facebook_extra_details.htm";
