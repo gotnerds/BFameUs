@@ -10,6 +10,7 @@ error_reporting (0);
 
 include_once ('classes/config.php');
 include_once ('includes/reserved_names.php');
+include_once ('googlelogin/google_config.php'); // Include google login libraries
 $user_ip 	= mysql_escape_string($_SERVER['REMOTE_ADDR']);
 
 if ( $enable_forum == 1 ) header("Location: " . $smf_bridge_register);

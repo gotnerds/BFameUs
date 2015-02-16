@@ -26,3 +26,23 @@
     margin-top: 10px;
     border: 0px;
 }
+.google_register {
+    display: block;
+    width: 162px;
+    height: 29px;
+    cursor: pointer;
+    background: url(../images/sociallogin/google-register.png) no-repeat;
+    text-indent: -9999px;
+    margin-top: 10px;
+    border: 0px;    
+}
+.google_signin {
+    display: block;
+    width: 162px;
+    height: 29px;
+    cursor: pointer;
+    background: url(../images/sociallogin/google-signin.png) no-repeat;
+    text-indent: -9999px;
+    margin-top: 10px;
+    border: 0px;
+}

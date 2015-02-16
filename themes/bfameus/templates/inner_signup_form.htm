@@ -360,7 +360,7 @@
     </form>
     <div class="social_login_block">
         <h4>- OR -</h4>
-        <input type="button" value="" class="facebook_register" onclick="checkLoginState();">
+        <input type="button" value="" class="facebook_register" onclick="checkLoginState();" />
         <div id="fb-root"></div>
         <script>
           var CLICKED_FB_LOGIN=false;
@@ -410,7 +410,41 @@
                 }
               }, {scope: 'email,public_profile'});
           }
-        </script>    
+        </script>
+        <input id="signinButton" class="google_register" onclick="javascript:g_login();" />
+        <script type="text/javascript">
+            var login_success = 0;
+            function g_login() {
+                //alert("Asd");
+                var additionalParams = {
+                    'clientid': '992534538917-me94biq332m6qbmk5hhhvp1gmcld1jnq.apps.googleusercontent.com',
+                    'cookiepolicy': 'single_host_origin',
+                    'callback': 'signinCallback',
+                    'scope': "https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
+                };
+                gapi.auth.signIn(additionalParams);
+            }
+            
+            function signinCallback(authResult) {
+                if (authResult['status']['signed_in']) {
+                    // Update the app to reflect a signed in user
+                    // Hide the sign-in button now that the user is authorized, for example:
+                    login_success = login_success + 1;
+                    if(login_success == 1) {
+                        console.log(authResult);
+                        //document.getElementById('signinButton').setAttribute('style', 'display: none');
+                        //window.location = "[var.base_url]"+"/google_login_extra_details.php?google_access_code="+authResult.code; 
+                    }
+                } else {
+                    // Update the app to reflect a signed out user
+                    // Possible error values:
+                    //   "user_signed_out" - User is signed-out
+                    //   "access_denied" - User denied access to your app
+                    //   "immediate_failed" - Could not automatically log in the user
+                    console.log('Sign-in state: ' + authResult['error']);
+                }
+            }            
+        </script>
     </div>    
     <!--[onload;block=div;when [var.show_signup]=1;comm]-->   
   </div>
