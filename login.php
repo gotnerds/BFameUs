@@ -10,6 +10,7 @@ error_reporting (E_ALL);
 
 include_once ('classes/config.php');
 include_once ('classes/sessions.php');
+include_once ('googlelogin/google_config.php'); // Include google login libraries
 
 if ( $enable_forum == 1 ) header("Location: " . $smf_bridge_register);
 

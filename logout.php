@@ -41,6 +41,9 @@ if ( defined('SMF_INSTALLED') ) {
 	$_SESSION['user_name'] 		= NULL;
 	$_SESSION['user_group'] 	= NULL;
 	$_SESSION['admin_logged']	= NULL;
+    
+    // Unset google details on logut
+    $_SESSION['google_user_profile'] = NULL;
 
 	@session_start();
 	@session_destroy();

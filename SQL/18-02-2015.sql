@@ -1,0 +1,1 @@
+ALTER TABLE  `member_profile` ADD  `google_id` BIGINT NOT NULL AFTER  `facebook_id`;

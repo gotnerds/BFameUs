@@ -68,7 +68,7 @@ if($user) {
                 $password		= md5($password_email);
                 $passwordSalt 	= substr(md5(rand()), 0, 4);    
                 
-                $send_confirm_email = $config['enabled_features_confirmation_email'] ;
+                $send_confirm_email = $config['enabled_features_confirmation_email'];
                 
                 // Insert new user record
     			$sql = "INSERT into member_profile (email_address, user_name, password, passwordSalt, first_name, last_name, user_ip, account_status, account_type, date_created, random_code, gender, facebook_id)

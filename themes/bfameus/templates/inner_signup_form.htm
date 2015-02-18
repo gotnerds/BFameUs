@@ -411,16 +411,16 @@
               }, {scope: 'email,public_profile'});
           }
         </script>
-        <input id="signinButton" class="google_register" onclick="javascript:g_login();" />
+        <input id="signinButton" type="button" class="google_register" onclick="javascript:g_login();" />
         <script type="text/javascript">
             var login_success = 0;
             function g_login() {
                 //alert("Asd");
                 var additionalParams = {
-                    'clientid': '992534538917-me94biq332m6qbmk5hhhvp1gmcld1jnq.apps.googleusercontent.com',
+                    'clientid': '[var.google_login_client_id]',
                     'cookiepolicy': 'single_host_origin',
                     'callback': 'signinCallback',
-                    'scope': "https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
+                    'scope': "[var.google_login_scope]"
                 };
                 gapi.auth.signIn(additionalParams);
             }
@@ -431,9 +431,7 @@
                     // Hide the sign-in button now that the user is authorized, for example:
                     login_success = login_success + 1;
                     if(login_success == 1) {
-                        console.log(authResult);
-                        //document.getElementById('signinButton').setAttribute('style', 'display: none');
-                        //window.location = "[var.base_url]"+"/google_login_extra_details.php?google_access_code="+authResult.code; 
+                        gapi.client.load('plus', 'v1', apiClientLoaded); 
                     }
                 } else {
                     // Update the app to reflect a signed out user
@@ -443,7 +441,36 @@
                     //   "immediate_failed" - Could not automatically log in the user
                     console.log('Sign-in state: ' + authResult['error']);
                 }
-            }            
+            }
+            
+            /**
+            * Sets up an API call after the Google API client loads.
+            */
+            function apiClientLoaded() {
+                gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
+            }
+            
+            /**
+            * Response callback for when the API client receives a response.
+            *
+            * @param resp The API response object with the user email and profile information.
+            */
+            function handleEmailResponse(resp) {
+                // Call ajax to set the session with required data
+                (function($) {
+                    $.ajax({
+                        url: 'googlelogin/set_google_login_details_ajax.php',
+                        type: "post",
+                        dataType: "json",
+                        data: "google_profile_data=" + JSON.stringify(resp),
+                        success: function(response) {
+                            if(response == 1) {
+                                window.location = "[var.google_login_redirect_uri]";                                
+                            }
+                        }
+                    });                    
+                })(jQuery);
+            }                                    
         </script>
     </div>    
     <!--[onload;block=div;when [var.show_signup]=1;comm]-->   
@@ -581,7 +608,68 @@
                     }
                   });
               }
-            </script>    
+            </script>
+            <input id="signinButton" type="button" class="google_signin" onclick="javascript:g_login();" />
+            <script type="text/javascript">
+                var login_success = 0;
+                function g_login() {
+                    //alert("Asd");
+                    var additionalParams = {
+                        'clientid': '[var.google_login_client_id]',
+                        'cookiepolicy': 'single_host_origin',
+                        'callback': 'signinCallback',
+                        'scope': "[var.google_login_scope]"
+                    };
+                    gapi.auth.signIn(additionalParams);
+                }
+                
+                function signinCallback(authResult) {
+                    if (authResult['status']['signed_in']) {
+                        // Update the app to reflect a signed in user
+                        // Hide the sign-in button now that the user is authorized, for example:
+                        login_success = login_success + 1;
+                        if(login_success == 1) {
+                            gapi.client.load('plus', 'v1', apiClientLoaded); 
+                        }
+                    } else {
+                        // Update the app to reflect a signed out user
+                        // Possible error values:
+                        //   "user_signed_out" - User is signed-out
+                        //   "access_denied" - User denied access to your app
+                        //   "immediate_failed" - Could not automatically log in the user
+                        console.log('Sign-in state: ' + authResult['error']);
+                    }
+                }
+                
+                /**
+                * Sets up an API call after the Google API client loads.
+                */
+                function apiClientLoaded() {
+                    gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
+                }
+                
+                /**
+                * Response callback for when the API client receives a response.
+                *
+                * @param resp The API response object with the user email and profile information.
+                */
+                function handleEmailResponse(resp) {
+                    // Call ajax to set the session with required data
+                    (function($) {
+                        $.ajax({
+                            url: 'googlelogin/set_google_login_details_ajax.php',
+                            type: "post",
+                            dataType: "json",
+                            data: "google_profile_data=" + JSON.stringify(resp),
+                            success: function(response) {
+                                if(response == 1) {
+                                    window.location = "[var.google_login_redirect_uri]";                                
+                                }
+                            }
+                        });                    
+                    })(jQuery);
+                }                                    
+            </script>               
         </div>        
         <form name="forgot" action="resendlogins.php" method="post" class="FormGeneric">
           <ul>
