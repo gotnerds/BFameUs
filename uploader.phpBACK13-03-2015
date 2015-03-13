@@ -165,7 +165,7 @@ if ($procede == false && $form_submitted == 'yes') {
 	$_SESSION['vid_upload_token']	= $vid_upload_token;
 
 	$template 		= "themes/$user_theme/templates/main_1.htm";
-    	$inner_template1 	= "themes/$user_theme/templates/inner_upload_video_form.htm";      
+    	$inner_template1 	= "themes/$user_theme/templates/inner_upload_video_form.htm";
     	$TBS 			= new clsTinyButStrong;
     	$TBS->NoErr 	= true;
     	$TBS->LoadTemplate("$template");
@@ -223,17 +223,9 @@ if ($procede == true && $form_submitted == 'yes') {
 
     $template = "themes/$user_theme/templates/main_1.htm";
     $inner_template1 = "themes/$user_theme/templates/inner_upload_video.htm";
-    //$inner_template1  = "themes/$user_theme/templates/inner_see_more.htm";
-    
- 
-
-
     $TBS = new clsTinyButStrong;
     $TBS->NoErr = true;// no more error message displayed.
     $TBS->LoadTemplate("$template");
-   //===========================================CUSTOM CODE STARTS HERE=================================================
-    $TBS->MergeBlock('videos','mysql',"SELECT * FROM videos WHERE approved='yes' $sql_public_private ORDER BY indexer DESC LIMIT 0,11");
-    //=================================================CUSTOM CODE ENDS HERE ========================================================
     $TBS->Render = TBS_OUTPUT;
     $TBS->Show();
 

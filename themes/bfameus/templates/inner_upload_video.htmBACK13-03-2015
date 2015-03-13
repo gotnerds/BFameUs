@@ -23,7 +23,7 @@
 <div id="column-right-2">
   <div class="header-wide"><h2>[var.lang_upload_video] - [[var.lang_start]]</h2></div>
   <div class="container-wide" style="width:700px; text-align:left; padding: 5px;">
-    <div id="UploadAudio" style="height:500px;">
+    <div id="UploadAudio">
       <table border="0" width="98%" cellspacing="0">
         <tr>
           <td width="100%" align="right" valign="top">
@@ -107,14 +107,6 @@
     		  </td>
     		</tr>
           </table>
-          <!--CUSTOM CODE STARTS HERE -->           
-          <div style="margin-top:20px;display:table;overflow:hidden;text-align:center;">
-            <h3 style="color:#000;padding:20px;text-align:center;">Most Recent Uploads</h3>
-            <div style="width:25%;float:left;padding-bottom:20px;">
-              <a href="videos/[videos.indexer;block=div]/[videos.title_seo;htmlconv=no;block=div]" target="_blank"><img src="uploads/thumbs/[videos.video_id;block=div].jpg" alt="video pic" width="120" height="90" border="0" /></a>
-            </div>
-          </div>          
-          <!-- CUSTOM CODE ENDS HERE -->
         </div>
       </div>
       <div class="container-wide-footer"></div>

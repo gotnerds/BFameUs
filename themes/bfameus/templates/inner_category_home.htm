@@ -52,29 +52,43 @@
 <div id="column-right-2">
   <!--Begin Content List-->
   <div id="content-list">
-    <ul class="content-list-thumb">
-      <li><a href="videos/[blkfeatured.indexer;block=div]/[blkfeatured.title_seo;block=div]"><img src="uploads/thumbs/[blkfeatured.video_id;block=div].jpg" alt="video pic" width="120" height="90" border="0" /></a></li>
-    </ul>
-    <ul class="content-list-info">
-      <li><h4>[var.lang_title]:&nbsp;</b><a href="videos/[blkfeatured.indexer;block=div]/[blkfeatured.title_seo;block=div]"><!--[blkfeatured.title;htmlconv=no;block=div;ope=max:70;comm]--></a></h4></li>
-      <li><b>[var.lang_description]:&nbsp;</b><!--[blkfeatured.description;htmlconv=no;block=div;ope=max:68;comm]--></li>
-      <li>
-        <span class="font4_12">[var.lang_rating]:&nbsp;&nbsp;</span>
-        <img border="0" src="themes/[var.user_theme]/images/[blkfeatured.star1;block=div]" width="18" height="18" alt="1 Star" />
-        <img border="0" src="themes/[var.user_theme]/images/[blkfeatured.star2;block=div]" width="18" height="18" alt="1 Star" />
-        <img border="0" src="themes/[var.user_theme]/images/[blkfeatured.star3;block=div]" width="18" height="18" alt="1 Star" />
-        <img border="0" src="themes/[var.user_theme]/images/[blkfeatured.star4;block=div]" width="18" height="18" alt="1 Star" />
-        <img border="0" src="themes/[var.user_theme]/images/[blkfeatured.star5;block=div]" width="18" height="18" alt="1 Star" />
-        &nbsp;&nbsp;&nbsp;
-        <span class="font4_12">[var.lang_views]:&nbsp;</span>(<!--[blkfeatured.number_of_views;block=div;comm]-->)
-        &nbsp;&nbsp;&nbsp;
-        <span class="font4_12">[var.lang_duration]:&nbsp;</span>(<!--[blkfeatured.video_length;block=div;ope=max:45;comm]-->)
-        &nbsp;&nbsp;&nbsp;
-        <span class="font4_12">[var.lang_uploaded]:&nbsp;</span><!--[blkfeatured.date_uploaded;block=div;comm;frm=mm-dd-yy]-->
-      </li>
-      <li><span class="font4_12">[var.lang_tags]:&nbsp;</span><!--[blkfeatured.tags;block=div;ope=max:80;comm]--></li>
-      <li><b>[var.lang_comments] - [var.lang_responses]:&nbsp;</b>(<!--[blkfeatured.comments;block=div;ope=max:80;comm]-->)</li>
-    </ul>
+    <!--CUSTOM CODE STARTS HERE -->  
+    <h1 style="padding-left:15px; padding-top:15px;">[var.channel_name]</h1>
+    <div style="height:auto; overflow:hidden; padding-bottom:20px;">        
+        <div style="text-align:center;width:25%;float:left;">
+            <h3 style="color:#000;padding:20px;text-align:center;">New Added</h3>
+            <div style="overflow-y:auto;height: 400px;">
+                <div style="padding-bottom:20px;">
+                    <a href="videos_new/[videos_new.indexer;block=div]/[videos_new.title_seo;htmlconv=no;block=div]" target="_blank"><img src="uploads/thumbs/[videos_new.video_id;block=div].jpg" alt="video pic" width="120" height="90" border="0" /></a>
+                </div>
+            </div>
+        </div>        
+        <div style="text-align:center;width:25%;float:left;">
+            <h3 style="color:#000;padding:20px;text-align:center;">Month</h3>
+            <div style="overflow-y:auto;height: 400px;">
+                <div style="padding-bottom:20px;">
+                    <a href="videos_month/[videos_month.indexer;block=div]/[videos_month.title_seo;htmlconv=no;block=div]" target="_blank"><img src="uploads/thumbs/[videos_month.video_id;block=div].jpg" alt="video pic" width="120" height="90" border="0" /></a>
+                </div>
+            </div>
+        </div> 
+        <div style="text-align:center;width:25%;float:left;">
+            <h3 style="color:#000;padding:20px;text-align:center;">Top 24 hr</h3>
+            <div style="overflow-y:auto;height: 400px;">
+                <div style="padding-bottom:20px;">
+                    <a href="videos_day/[videos_day.indexer;block=div]/[videos_day.title_seo;htmlconv=no;block=div]" target="_blank"><img src="uploads/thumbs/[videos_day.video_id;block=div].jpg" alt="video pic" width="120" height="90" border="0" /></a>
+                </div>
+            </div>
+        </div> 
+        <div style="text-align:center;width:25%;float:left;">
+            <h3 style="color:#000;padding:20px;text-align:center;">All Time</h3>
+            <div style="overflow-y:auto;height: 400px;">
+                <div style="padding-bottom:20px;">
+                    <a href="videos_all/[videos_all.indexer;block=div]/[videos_all.title_seo;htmlconv=no;block=div]" target="_blank"><img src="uploads/thumbs/[videos_all.video_id;block=div].jpg" alt="video pic" width="120" height="90" border="0" /></a>
+                </div>
+            </div>
+        </div>   
+    </div>      
+    <!-- CUSTOM CODE ENDS HERE -->
   </div>
 </div>
 <!--End Right Column-->
@@ -84,16 +98,3 @@
   <span class="font4_14">[var.lang_no_videos_added]</span><!--[onload_309;block=div;when [var.show_v]=1;comm]-->
 </div>
 <!-- nothing found end -->
-
-
-<!-- Pagination start -->
-<br />
-<br />
-<div align="center">
-  <div id="pagination">
-    <ul>[var.show_pages;htmlconv=no]</ul>
-  </div>
-</div>
-<br />
-<!-- Pagination end -->
-

@@ -295,7 +295,19 @@ $TBS->NoErr 	= true;										// no more error message displayed.
 
 $TBS->LoadTemplate("$template");
 
-$TBS->MergeBlock('blkfeatured',$result_featured);
+
+//===========================================CUSTOM CODE STARTS HERE=================================================
+//New Added
+$TBS->MergeBlock('videos_new','mysql',"SELECT * FROM videos WHERE channel_id = '$channel_id' AND approved='yes' $sql_public_private ORDER BY indexer DESC");
+//Videos of this month
+$TBS->MergeBlock('videos_month','mysql',"SELECT * FROM videos WHERE channel_id = '$channel_id' AND approved='yes' $sql_public_private AND month(date_uploaded) = EXTRACT(month FROM (NOW())) ORDER BY rating_total_points DESC");
+//Videos of today
+$TBS->MergeBlock('videos_day','mysql',"SELECT * FROM videos WHERE channel_id = '$channel_id' AND approved='yes' $sql_public_private AND DATE(date_uploaded) = CURDATE() ORDER BY rating_total_points DESC");
+//Videos of all time
+$TBS->MergeBlock('videos_all','mysql',"SELECT * FROM videos WHERE channel_id = '$channel_id' AND approved='yes' $sql_public_private ORDER BY rating_total_points DESC");
+//=================================================CUSTOM CODE ENDS HERE ========================================================
+
+//$TBS->MergeBlock('blkfeatured',$result_featured);
 $TBS->MergeBlock('blk1', $all_categories);
 $TBS->MergeBlock('blk2', $all_subs);
 
