@@ -36,77 +36,27 @@
   </div>
   <!--End Video Player Container-->
 
-  <!--Begin Promoted Videos-->
-  <div class="header-wide-2">[var.lang_promoted_videos]</div>
-  <!--Begin Promototed Videos Container-->
-  <div class="container-wide">
-    <div id="promoted-container">
-      <div class="ts-1">
-        <div class="ts-1-1">
-          <div align="center" class="ts-2-1"></div>
-          <div align="center" class="ts-2-2"><a href="videos/[mp.indexer;block=((div))]/[mp.title_seo;htmlconv=no;block=((div))]"><img height="90" alt="thumb" src="uploads/thumbs/[mp.video_id;block=((div))].jpg" width="120" /></a></div>
-          <div align="center" class="ts-2-3"><!--[mp.title;htmlconv=no;block=((div));ope=max:18;maxhtml;comm]--></div>
-          <div align="center" class="ts-2-4">[var.lang_added]:&nbsp;<!--[mp.date_uploaded;block=((div));comm]--></div>
-          <div align="center" class="ts-2-5"></div>
-        </div>
-        <div class="ts-1-2">
-          <div align="center" class="ts-2-1"></div>
-          <div align="center" class="ts-2-2"><a href="videos/[mp.indexer;block=((div))]/[mp.title_seo;htmlconv=no;block=((div))]"><img height="90" alt="thumb" src="uploads/thumbs/[mp.video_id;block=((div))].jpg" width="120" /></a></div>
-          <div align="center" class="ts-2-3"><!--[mp.title;htmlconv=no;block=((div));ope=max:18;maxhtml;comm]--></div>
-          <div align="center" class="ts-2-4">[var.lang_added]:&nbsp;<!--[mp.date_uploaded;block=((div));comm]--></div>
-          <div align="center" class="ts-2-5"></div>
-        </div>
-        <div class="ts-1-3">
-          <div align="center" class="ts-2-1"></div>
-          <div align="center" class="ts-2-2"><a href="videos/[mp.indexer;block=((div))]/[mp.title_seo;htmlconv=no;block=((div))]"><img height="90" alt="thumb" src="uploads/thumbs/[mp.video_id;block=((div))].jpg" width="120" /></a></div>
-          <div align="center" class="ts-2-3"><!--[mp.title;htmlconv=no;block=((div));ope=max:18;maxhtml;comm]--></div>
-          <div align="center" class="ts-2-4">[var.lang_added]:&nbsp;<!--[mp.date_uploaded;block=((div));comm]--></div>
-          <div align="center" class="ts-2-5"></div>
-        </div>
-        <div class="ts-1-4">
-          <div align="center" class="ts-2-1"></div>
-    	    <div align="center" class="ts-2-2"><a href="videos/[mp.indexer;block=((div))]/[mp.title_seo;htmlconv=no;block=((div))]"><img height="90" alt="thumb" src="uploads/thumbs/[mp.video_id;block=((div))].jpg" width="120" /></a></div>
-          <div align="center" class="ts-2-3"><!--[mp.title;htmlconv=no;block=((div));ope=max:18;maxhtml;comm]--></div>
-          <div align="center" class="ts-2-4">[var.lang_added]:&nbsp;<!--[mp.date_uploaded;block=((div));comm]--></div>
-          <div align="center" class="ts-2-5"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--End Promoted Videos Container-->
-  <div class="container-wide-footer"></div>
-
-  <!--Begin Video Browser. (Featured, Most Views, etc...)-->
-  <div class="header-wide">[var.lang_browse_videos]
-    <div class="browse-nav">
-      <a onclick="javascript:ahahscript.ahah('index_ajax.php?type=video&load=featured', 'videos-ajax', '', 'GET', '', this);" style="cursor:pointer;">[var.lang_featured]</a>&nbsp;|&nbsp;
-      <a onclick="javascript:ahahscript.ahah('index_ajax.php?type=video&load=viewed', 'videos-ajax', '', 'GET', '', this);" style="cursor:pointer;">[var.lang_most_viewed]</a>&nbsp;|&nbsp;
-      <a onclick="javascript:ahahscript.ahah('index_ajax.php?type=video&load=recent', 'videos-ajax', '', 'GET', '', this);" style="cursor:pointer;">[var.lang_most_recent]</a>&nbsp;|&nbsp;
-      <a onclick="javascript:ahahscript.ahah('index_ajax.php?type=video&load=comments', 'videos-ajax', '', 'GET', '', this);" style="cursor:pointer;">[var.lang_most_commented]</a>&nbsp;|&nbsp;
-      <a onclick="javascript:ahahscript.ahah('index_ajax.php?type=video&load=rated', 'videos-ajax', '', 'GET', '', this);" style="cursor:pointer;">[var.lang_highest_rated]</a>
-    </div>
-  </div>
-
-  <!--Begin Video Browser Container-->
-  <!-- we need a fixed height here if done this way to stablize the ajax load -->
+ <!--Begin Video Browser. (Most Recent Videos)-->
+  <div class="header-wide">Most Recent Videos</div>
+ <!--Begin Video Browser Container-->
   <div class="container-wide">
     <div class="browse-videos" style="height: [var.ajax_height]px;">
       <div id="videos-ajax">
         <div id="videoajax">
           <ul>
 	      <li>
-	        <a href="videos/[blkfeatured_videos.indexer;block=div]/[blkfeatured_videos.title_seo;htmlconv=no;block=div]"><div class="browse-videos-title"><!--[blkfeatured_videos.title;htmlconv=no;ope=max:14;maxhtml;block=div;comm]--></div></a>
-	        <div class="browse-videos-member">By:&nbsp;&nbsp;<a href="members/[blkfeatured_videos.uploaded_by]"><b><!--[blkfeatured_videos.uploaded_by;block=div;ope=max:14;maxhtml;comm]--></b></a></div>
-	        <a href="videos/[blkfeatured_videos.indexer;block=div]/[blkfeatured_videos.title_seo;htmlconv=no;block=div]"><img src="uploads/thumbs/[blkfeatured_videos.video_id;block=div].jpg" title="<!--[blkfeatured_videos.title;htmlconv=no;block=div;comm]-->" width="[var.theme_thumbnail_width]" height="[var.theme_thumbnail_height]" alt="video pic" /></a>
-	        <div class="browse-videos-duration"><b><!--[blkfeatured_videos.video_length;block=div;ope=max:45;comm]--></b></div>
+	        <a href="videos/[recent_videos.indexer;block=div]/[recent_videos.title_seo;htmlconv=no;block=div]"><div class="browse-videos-title"><!--[recent_videos.title;htmlconv=no;ope=max:14;maxhtml;block=div;comm]--></div></a>
+	        <div class="browse-videos-member">By:&nbsp;&nbsp;<a href="members/[recent_videos.uploaded_by]"><b><!--[recent_videos.uploaded_by;block=div;ope=max:14;maxhtml;comm]--></b></a></div>
+	        <a href="videos/[recent_videos.indexer;block=div]/[recent_videos.title_seo;htmlconv=no;block=div]"><img src="uploads/thumbs/[recent_videos.video_id;block=div].jpg" title="<!--[recent_videos.title;htmlconv=no;block=div;comm]-->" width="[var.theme_thumbnail_width]" height="[var.theme_thumbnail_height]" alt="video pic" /></a>
+	        <div class="browse-videos-duration"><b><!--[recent_videos.video_length;block=div;ope=max:45;comm]--></b></div>
 	        <div class="browse-videos-rating">
-	          <img border="0" src="themes/[var.user_theme]/images/[blkfeatured_videos.star1;block=div]" width="11" height="11" alt="1 Star" />
-	          <img border="0" src="themes/[var.user_theme]/images/[blkfeatured_videos.star2;block=div]" width="11" height="11" alt="1 Star" />
-	          <img border="0" src="themes/[var.user_theme]/images/[blkfeatured_videos.star3;block=div]" width="11" height="11" alt="1 Star" />
-	          <img border="0" src="themes/[var.user_theme]/images/[blkfeatured_videos.star4;block=div]" width="11" height="11" alt="1 Star" />
-	          <img border="0" src="themes/[var.user_theme]/images/[blkfeatured_videos.star5;block=div]" width="11" height="11" alt="1 Star" />
+	          <img border="0" src="themes/[var.user_theme]/images/[recent_videos.star1;block=div]" width="11" height="11" alt="1 Star" />
+	          <img border="0" src="themes/[var.user_theme]/images/[recent_videos.star2;block=div]" width="11" height="11" alt="1 Star" />
+	          <img border="0" src="themes/[var.user_theme]/images/[recent_videos.star3;block=div]" width="11" height="11" alt="1 Star" />
+	          <img border="0" src="themes/[var.user_theme]/images/[recent_videos.star4;block=div]" width="11" height="11" alt="1 Star" />
+	          <img border="0" src="themes/[var.user_theme]/images/[recent_videos.star5;block=div]" width="11" height="11" alt="1 Star" />
 	        </div>
-	        <div class="browse-videos-date">[var.lang_added]:&nbsp;<!--[blkfeatured_videos.date_uploaded;block=div;comm]--></div>
+	        <div class="browse-videos-date">[var.lang_added]:&nbsp;<!--[recent_videos.date_uploaded;block=div;comm]--></div>
 	      </li>
           </ul>
         </div>
@@ -116,59 +66,23 @@
   </div>
   <!--End Video Browser Container-->
   <div class="container-wide-footer"></div>
-
-  <!--Begin Image Browser. (Featured, Most Views, etc...)-->
-  <!-- we need a fixed height here if done this way to stablize the ajax load -->
-  <features_images>
-  <div class="header-wide-2">[var.lang_browse_images]
-    <div class="browse-nav-2">
-      <a onclick="javascript:ahahscript.ahah('index_ajax.php?type=image&load=featured', 'images-ajax', '', 'GET', '', this);" style="cursor:pointer;">[var.lang_featured]</a>&nbsp;|&nbsp;
-      <a onclick="javascript:ahahscript.ahah('index_ajax.php?type=image&load=viewed', 'images-ajax', '', 'GET', '', this);" style="cursor:pointer;">[var.lang_most_viewed]</a>&nbsp;|&nbsp;
-      <a onclick="javascript:ahahscript.ahah('index_ajax.php?type=image&load=recent', 'images-ajax', '', 'GET', '', this);" style="cursor:pointer;">[var.lang_most_recent]</a>&nbsp;|&nbsp;
-      <a onclick="javascript:ahahscript.ahah('index_ajax.php?type=image&load=comments', 'images-ajax', '', 'GET', '', this);" style="cursor:pointer;">[var.lang_most_commented]</a>&nbsp;|&nbsp;
-      <a onclick="javascript:ahahscript.ahah('index_ajax.php?type=image&load=rated', 'images-ajax', '', 'GET', '', this);" style="cursor:pointer;">[var.lang_highest_rated]</a>
-    </div>
+  <!-- Pagination start -->
+<br />
+<br />
+<div align="center">
+  <div id="pagination">
+    <ul>[var.show_pages;htmlconv=no]</ul>
   </div>
-
-  <!--Begin Image Browser Container-->
-  <div class="container-wide">
-    <div class="browse-videos" style="height: [var.ajax_height]px;">
-      <div id="images-ajax">
-        <div id="imageajax">
-          <ul>
-            <li>
-              <a href="view-image/[blkfeatured_images.indexer;block=div]/[blkfeatured_images.title_seo;htmlconv=no]"><div class="browse-videos-title"><!--[blkfeatured_images.title;htmlconv=no;block=div;ope=max:14;maxhtml;comm]--></div></a>
-              <div class="browse-videos-member">[var.lang_by]:&nbsp;&nbsp;<a href="members/[blkfeatured_images.uploaded_by]"><b><!--[blkfeatured_images.uploaded_by;block=div;ope=max:14;maxhtml;comm]--></b></a></div>
-              <div style="width:120px; height:90px;">
-                <a href="view-image/[blkfeatured_images.indexer;block=div]/[blkfeatured_images.title_seo;htmlconv=no]"><img src="addons/albums/thumbs/[blkfeatured_images.image_id;block=div]" alt="album thumbnail" width="[blkfeatured_images.thumb_new_width;block=(div)]" height="[blkfeatured_images.thumb_new_height;block=(div)]" /></a>
-              </div>
-              <div class="browse-videos-duration"><b>[var.lang_rated]:&nbsp;</b></div>
-	        <div class="browse-videos-rating">
-	          <img border="0" src="themes/[var.user_theme]/images/[blkfeatured_images.star1;block=div]" width="11" height="11" alt="1 Star" />
-	          <img border="0" src="themes/[var.user_theme]/images/[blkfeatured_images.star2;block=div]" width="11" height="11" alt="1 Star" />
-	          <img border="0" src="themes/[var.user_theme]/images/[blkfeatured_images.star3;block=div]" width="11" height="11" alt="1 Star" />
-	          <img border="0" src="themes/[var.user_theme]/images/[blkfeatured_images.star4;block=div]" width="11" height="11" alt="1 Star" />
-	          <img border="0" src="themes/[var.user_theme]/images/[blkfeatured_images.star5;block=div]" width="11" height="11" alt="1 Star" />
-	        </div>
-              <div class="browse-videos-date">[var.lang_added]:&nbsp;<!--[blkfeatured_images.date_uploaded;block=div;comm]--></div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="clear-fix"></div>
-    </div>
-  </div>
-  <!--End images Browser Container-->
-  <div class="container-wide-footer"></div>
-  <!--[onload;block=features_images;when [var.enable_images]=1;comm]-->
-  </features_images>
-
+</div>
+<br />
+<!-- Pagination end -->
 </div>
 <!--End Left Column-->
 
+
+
 <!--Begin Right Column-->
 <div id="column-right-1">
-
   <!-- phpmotion login -->
   <div id="login-box">
     <form action="login.php" method="post" accept-charset="UTF-8" class="middletext">
@@ -266,23 +180,6 @@
   </span>
   <!-- End categories -->
 
-  <!--Begin Audio Browser. (Featured, Most Views, etc...)-->
-  <features_audio>
-  <div class="header-narrow-2">[var.lang_featured_audios]</div>
-  <!--Begin Audio Browser Container-->
-  <div class="browse-audios">
-    <ul>
-      <li>
-	  <a href="audio/[blkfeatured_audios.indexer;block=div]/[blkfeatured_audios.title_seo;htmlconv=no;block=div]"><img src="[var.base_url]/themes/[var.user_theme]/images/icons/audio_video_small.png" alt="watched" class="stats-thumb">
-	  <span class="audio-lable"><!--[blkfeatured_audios.title;htmlconv=no;block=div;ope=max:34;comm]--></span></a>
-	</li>
-    </ul>
-  </div>
-  <div class="container-narrow-bottom"></div>
-  <!--[onload;block=features_audio;when [var.enable_audio]=1;comm]-->
-  </features_audio>
-  <!--End Audio Browser Container-->
-
   <features_blogs>
   <!--Begin Blog Browser-->
   <div class="header-narrow">[var.lang_featured_blogs]</div>
@@ -299,6 +196,7 @@
   <!--End Blog Browser-->
   <!--[onload;block=features_blogs;when [var.enable_blogs]=1;comm]-->
   </features_blogs>
+  
 
   <!--Begin Popular Media-->
   <div class="header-narrow-2">[var.lang_popular_media]</div>
@@ -308,12 +206,6 @@
     <ul>
       <li><!--[var.popular_videos;htmlconv=no;comm]--></li>
       <li>&nbsp;</li>
-      <features_audio>
-      <span class="popular-lable">&nbsp;[var.lang_popular_audios]</span>
-      <li><!--[var.popular_audios;htmlconv=no;comm]--></li>
-      <li>&nbsp;</li>
-      <!--[onload;block=features_audio;when [var.enable_audio]=1;comm]-->
-      </features_audio>
     </ul>
   </div>
   <div class="container-narrow-bottom"></div>
@@ -334,19 +226,19 @@
         <img src="[var.base_url]/themes/[var.user_theme]/images/icons/display_small.png" alt="watched" class="stats-thumb" /><span class="stats-lable">[var.lang_videos_watched]:</span> <span class="stats-value"><!--[var.total_watched;comm]--></span>
       </li>
       <features_audio>
-      <li>
+      <!-- li>
         <img src="[var.base_url]/themes/[var.user_theme]/images/icons/audio_video_small.png" alt="watched" class="stats-thumb">
-        <span class="stats-lable">[var.lang_audios_played]:</span><span class="stats-value"><!--[var.total_played;comm]--></span>
-      </li>
+        <span class="stats-lable">[var.lang_audios_played]:</span><span class="stats-value"><!--[var.total_played;comm]--><!-- /span>
+      </li-->
       <!--[onload;block=features_audio;when [var.enable_audio]=1]-->
       </features_audio>
-      <features_images>
+      <!-- features_images>
       <li>
         <img src="[var.base_url]/themes/[var.user_theme]/images/icons/image.png" alt="watched" class="stats-thumb">
         <span class="stats-lable">[var.lang_images_viewed]:</span><span class="stats-value"><!--[var.images_viewed;comm]--></span>
-      </li>
+      <!--/li>
       <!--[onload;block=features_images;when [var.enable_images]=1]-->
-      </features_images>
+      <!--/features_images-->
       <li>
         <img src="themes/[var.user_theme]/images/icons/members.png" alt="members" width="22" height="22" align="absmiddle" class="stats-thumb" />
 	  <span class="stats-lable">[var.lang_total_members]:</span> <span class="stats-value"><!--[var.members_total;comm]--></span>

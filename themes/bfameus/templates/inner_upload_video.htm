@@ -1,12 +1,11 @@
-<!--Begin Left Column-->
 <div id="column-left-2">
   <!--Begin Upload Menu-->
   <div class="header-narrow"><span class="font5_12">[var.lang_main_menu]</span></div>
   <div class="whats-showing">
     <ul>
       <li><a href="uploader.php">[var.lang_upload_video]</a></li>
-      <!--[var.audio_inner_upload_video_form1;htmlconv=no;comm]-->
-	<!--[var.image_inner_upload_form;htmlconv=no;comm]-->
+     <!-- <!--[var.audio_inner_upload_video_form1;htmlconv=no;comm]-->
+	  <!--[var.image_inner_upload_form;htmlconv=no;comm]-->-->
     </ul>
   </div>
   <div class="container-narrow-bottom"></div><!--End Upload Menu-->
@@ -21,6 +20,45 @@
 
 <!--Begin Right Column-->
 <div id="column-right-2">
+
+
+  <div class="header-wide">[var.lang_latest_videos]</div>
+  <!--Video Player Container.  This is where the player embed code goes-->
+  <div id="index-player-container">
+	<div id="myAlternativeContent">
+		<a href="http://www.adobe.com/go/getflashplayer">
+			<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+		</a>
+	</div>
+			<script type="text/javascript">
+			var flashvars = {};
+			var params = {};
+			var attributes = {};
+			flashvars.player_mode = "playlist";
+			flashvars.display_ads = "no";
+			flashvars.playlist = "yes";
+			flashvars.playlist_xml = "[var.base_url]/playlist.php";
+			flashvars.logo = "top_right";
+			flashvars.url_logo = "[var.base_url]/images/playerlogos/logo-player.png";
+			flashvars.autoplay = "false";
+			flashvars.color_nav_bar_top = "0x478dc2";
+			flashvars.color_nav_bar_bottom = "0xE7EBEC";
+			flashvars.ads_background_color = "0x00CCFF";
+			flashvars.ads_border_color = "0xCCCCCC";
+			flashvars.scrubber_position_color = "0x6AA1CE";
+			flashvars.scrubber_load_color = "0x888888";
+			flashvars.scrubber_background_color = "0xBBBBBB";
+			flashvars.volume_bar_color = "0xBBBBBB";
+			flashvars.buffering_time = 1;
+			flashvars.aspect_ratio="stretch";
+			params.allowfullscreen = "true";
+			params.allowscriptaccess = "sameDomain";
+			swfobject.embedSWF("[var.base_url]/player.swf", "myAlternativeContent", "710", "350", "9.0.0", false, flashvars, params, attributes);
+		</script>
+  </div>
+  <!--End Video Player Container-->
+  
+  
   <div class="header-wide"><h2>[var.lang_upload_video] - [[var.lang_start]]</h2></div>
   <div class="container-wide" style="width:700px; text-align:left; padding: 5px;">
     <div id="UploadAudio" style="height:500px;">

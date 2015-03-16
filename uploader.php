@@ -11,6 +11,29 @@ include_once ('classes/config.php');
 include_once ('classes/sessions.php');
 include 'uploader_conlib.php';
 
+// load required javascripts used in main_1.htm
+$swfobject 			= 1;
+$ahah				= 1;
+$codes_internal		= '';
+$codes			= '';
+$page_title			= $config['site_name'];
+$tag_cloud 			= make_tag_cloud('videos');
+$tag_cloud_block		= $tag_cloud[0];
+$proceed 			= true;
+$enable_promoted 		= true;
+$limit			= $config['see_more_limits'];
+$featured_display 	= $config['admin_order_by'];
+$default_album_pic	= $config['default_album_pic'];
+$enabled_stats		= $config['enabled_features_stats'];
+$tpl_ajax_height		= 166;
+$ajax_mutiplier		= $limit / 4; 						//default template has 4 views accross the row - so limit = 8 / 4 = 2 rows
+$ajax_height		= $tpl_ajax_height * $ajax_mutiplier;
+$show_vid_channels	= $config['show_home_page_categories'];
+$theme_thumbnail_width	= $config['theme_thumbnail_width'];
+$theme_thumbnail_height	= $config['theme_thumbnail_height'];
+$auto_play_index 		= $config['auto_play_index'];
+$show_stats			= $config["enabled_features_stats"];
+
 $config['notification_error'] = $lang_error;
 
 $page_title = $lang_upload_video;

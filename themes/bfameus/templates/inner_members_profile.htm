@@ -65,9 +65,9 @@
         <!-- my stats start -->
         <ul>
           <li><img src="[var.base_url]/themes/[var.user_theme]/images/icons/aktion_small.png" alt="videos" width="23" height="23" />&nbsp;[var.lang_word_videos]:&nbsp;<!--[var.my_video_total;comm]--></li>
-          <li><img src="[var.base_url]/themes/[var.user_theme]/images/icons/audio_video_small.png" alt="audio" width="23" height="23" />&nbsp;[var.lang_word_audios]:&nbsp;<!--[var.my_audio_total;comm]--><!--[onload;block=li;when [var.enable_audio]=1]--></li>
+          <!--li><img src="[var.base_url]/themes/[var.user_theme]/images/icons/audio_video_small.png" alt="audio" width="23" height="23" />&nbsp;[var.lang_word_audios]:&nbsp;<!--[var.my_audio_total;comm]--><!--[onload;block=li;when [var.enable_audio]=1]--><!--/li-->
           <li><img src="[var.base_url]/themes/[var.user_theme]/images/icons/editpaste.png" alt="blogs" width="23" height="23" />&nbsp;[var.lang_blogs]:&nbsp;<!--[var.my_blog_total;comm]--><!--[onload;block=li;when [var.enable_blogs]=1]--></li>
-          <li><img src="[var.base_url]/themes/[var.user_theme]/images/icons/images.png" alt="images" width="23" height="23" />&nbsp;[var.lang_pictures]:&nbsp;<!--[var.my_image_total;comm]--><!--[onload;block=li;when [var.enable_images]=1]--></li>
+          <!--li><img src="[var.base_url]/themes/[var.user_theme]/images/icons/images.png" alt="images" width="23" height="23" />&nbsp;[var.lang_pictures]:&nbsp;<!--[var.my_image_total;comm]--><!--[onload;block=li;when [var.enable_images]=1]--><!--/li-->
           <li><img src="[var.base_url]/themes/[var.user_theme]/images/icons/members.png" alt="friends" width="23" height="23" />&nbsp;[var.lang_friends]:&nbsp;<!--[var.my_friends_total;comm]--></li>
           <li></li>
           <li></li>
@@ -94,18 +94,18 @@
         <div id="MP_Right_1_submenu">
           <ul id="MP_Right_1_submenu_list1">
             <li><a href="javascript:void(0)" onClick="javascript:ahahscript.ahah('[var.base_url]/memberprofile_ajax.php?type=1&uid=[var.member_id]&page=1', 'Ajax-Media', '', 'GET', '', this);">[var.lang_word_videos]</a></li>
-            <li>
+            <!--li>
               <a href="javascript:void(0)" onClick="javascript:ahahscript.ahah('[var.base_url]/memberprofile_ajax.php?type=6&uid=[var.member_id]&page=1', 'Ajax-Media', '', 'GET', '', this);">[var.lang_word_audios]</a>
               <!--[onload;block=li;when [var.enable_audio]=1]-->
-            </li>
-            <li>
+            <!--/li-->
+            <!--li>
               <a href="javascript:void(0)" onClick="javascript:ahahscript.ahah('[var.base_url]/memberprofile_ajax.php?type=3&uid=[var.member_id]&page=1', 'Ajax-Media', '', 'GET', '', this);">[var.lang_pictures]</a>
               <!--[onload;block=li;when [var.enable_images]=1]-->
-            </li>
-            <li>
+            <!--/li-->
+            <!--li>
               <a href="javascript:void(0)" onClick="javascript:ahahscript.ahah('[var.base_url]/memberprofile_ajax.php?type=5&uid=[var.member_id]&page=1', 'Ajax-Media', '', 'GET', '', this);">[var.lang_blogs]</a>
               <!--[onload;block=li;when [var.enable_blogs]=1]-->
-            </li>
+            <!--/li-->
           </ul>
         </div>
         <div id ="Ajax-Media">
@@ -155,14 +155,14 @@
               <li><a href="javascript:void(0)" onClick="javascript:ahahscript.ahah('[var.base_url]/memberprofile_ajax.php?type=10&uid=[var.member_id]&amp;page=1', 'Ajax-Aboutme', '', 'GET', '', this);">[var.lang_social]</a></li>
               <li class="style1">|</li>
               <li><a href="javascript:void(0)" onClick="javascript:ahahscript.ahah('[var.base_url]/memberprofile_ajax.php?type=2&uid=[var.member_id]&amp;page=1', 'Ajax-Aboutme', '', 'GET', '', this);">[var.lang_favorites_video]</a></li>
-              <li>
+              <!--li>
                 <a href="javascript:void(0)" onClick="javascript:ahahscript.ahah('[var.base_url]/memberprofile_ajax.php?type=7&uid=[var.member_id]&amp;page=1', 'Ajax-Aboutme', '', 'GET', '', this);">[var.lang_favorites_audio]</a>
                 <!--[onload;block=li;when [var.enable_audio]=1]-->
-              </li>
-              <li>
+              <!--/li-->
+              <!--li>
                 <a href="javascript:void(0)" onClick="javascript:ahahscript.ahah('[var.base_url]/memberprofile_ajax.php?type=4&uid=[var.member_id]&amp;page=1', 'Ajax-Aboutme', '', 'GET', '', this);">[var.lang_favorites_pictures]</a>
                 <!--[onload;block=li;when [var.enable_images]=1]-->
-              </li>
+              <!--/li-->
             </ul>
           </div>
           <div id="AboutMeOverflow">

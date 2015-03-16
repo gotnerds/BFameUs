@@ -481,6 +481,54 @@ if (!empty($error_code)) {
 
 $show_login_box = ( ( $_SESSION['user_id'] == '' ) ? 1 : 0 );
 
+
+//get all recent videos
+$pagination 	= pagination("SELECT * FROM videos WHERE approved='yes' AND public_private = 'public' ORDER BY indexer DESC", $limit);
+$set_limit 		= $pagination[0]['set_limit'];
+$total_pages 	= $pagination[0]['total_pages'];
+$current_page 	= $pagination[0]['current_page'];
+$total_records	= $pagination[0]['total_records'];
+$next_page 		= $pagination[0]['next_page'];					// use in html navigation (src)
+$prev_page 		= $pagination[0]['prev_page'];					// use in html navigation (src)
+$nl 			= $pagination[0]['nl'];							// use in html navigation: next>>
+$pl 			= $pagination[0]['pl'];							// use in html navigation: <<previous
+
+$recent_videos = array();
+
+$sql 			= "SELECT * FROM videos WHERE approved='yes' AND public_private = 'public' ORDER BY indexer DESC LIMIT $set_limit, $limit";
+$query 		= @mysql_query($sql);
+
+while ( $recent_result = @mysql_fetch_array($query) ) {
+
+	//get comments info
+	$video_id	= $recent_result['indexer'];
+	$sql2 		= "SELECT * FROM videocomments WHERE video_id = $video_id";
+	$query2 		= @mysql_query($sql2);
+	$comments_number 	= @mysql_num_rows($query2);
+	$comments_array 	= array('comments' => $comments_number);
+
+	//get video rating
+
+	$stars_array 	= array();
+	$stars_array 	= stars_array($video_id);
+
+	//merge comments array and video array
+	$result_data		= @array_merge($recent_result,$comments_array, $stars_array);
+
+	$recent_videos[] = $result_data;
+}
+
+//PAGINATION PLUS >> start
+
+$url 					= 'index.php';
+$additional_url_variable = "?page=";
+
+@include_once ($include_base . '/includes/pagination.inc.php');
+
+//PAGINATION PLUS >> end
+
+
+
 if (defined('SMF_INSTALLED')) {
 	$show_login_box		= 0;
 	//$show_smf_login_box	= 1;
@@ -494,6 +542,9 @@ $TBS->NoErr 	= true;
 
 $TBS->LoadTemplate("$template");
 
+
+
+$TBS->MergeBlock('recent_videos', $recent_videos);
 $TBS->MergeBlock('mp', $recent);
 $TBS->MergeBlock('blkfeatured_videos', $browse_videos);
 $TBS->MergeBlock('blkfeatured_audios', $browse_audios);
