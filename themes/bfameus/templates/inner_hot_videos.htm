@@ -37,7 +37,7 @@
 <!--Begin Right Column-->
   <div id="column-right-2">
  <!--Begin Video Browser. (Most Recent Videos)-->
-  <div class="header-wide">Genres</div>
+  <div class="header-wide">Hot</div>
  <!--Begin Video Browser Container-->
   <div class="container-wide">
     <div class="browse-videos" style="height: [var.ajax_height]px;">
@@ -45,9 +45,19 @@
         <div id="videoajax">
           <ul>
 	      <li>
-	        <a href="category/[all_categories.channel_name_seo;block=li]"><div class="browse-videos-title"><!--[all_categories.channel_name;htmlconv=no;ope=max:14;maxhtml;block=div;comm]--></div></a>
-	        <a href="category/[all_categories.channel_name_seo;block=li]"><img src="uploads/thumbs/[all_categories.video_id;block=div].jpg" title="<!--[all_categories.channel_name;htmlconv=no;block=div;comm]-->" width="[var.theme_thumbnail_width]" height="[var.theme_thumbnail_height]" alt="[all_categories.channel_name]" /></a>
-	      </li>
+	        <a href="videos/[hot_videos.indexer;block=div]/[hot_videos.title_seo;htmlconv=no;block=div]"><div class="browse-videos-title"><!--[hot_videos.title;htmlconv=no;ope=max:14;maxhtml;block=div;comm]--></div></a>
+	        <div class="browse-videos-member">By:&nbsp;&nbsp;<a href="members/[hot_videos.uploaded_by]"><b><!--[hot_videos.uploaded_by;block=div;ope=max:14;maxhtml;comm]--></b></a></div>
+	        <a href="videos/[hot_videos.indexer;block=div]/[hot_videos.indexer;htmlconv=no;block=div]"><img src="uploads/thumbs/[hot_videos.video_id;block=div].jpg" title="<!--[hot_videos.title;htmlconv=no;block=div;comm]-->" width="[var.theme_thumbnail_width]" height="[var.theme_thumbnail_height]" alt="[hot_videos.title]" /></a>
+	     	<div class="browse-videos-duration"><b><!--[hot_videos.video_length;block=div;ope=max:45;comm]--></b></div>
+	        <div class="browse-videos-rating">
+	          <img border="0" src="themes/[var.user_theme]/images/[hot_videos.star1;block=div]" width="11" height="11" alt="1 Star" />
+	          <img border="0" src="themes/[var.user_theme]/images/[hot_videos.star2;block=div]" width="11" height="11" alt="1 Star" />
+	          <img border="0" src="themes/[var.user_theme]/images/[hot_videos.star3;block=div]" width="11" height="11" alt="1 Star" />
+	          <img border="0" src="themes/[var.user_theme]/images/[hot_videos.star4;block=div]" width="11" height="11" alt="1 Star" />
+	          <img border="0" src="themes/[var.user_theme]/images/[hot_videos.star5;block=div]" width="11" height="11" alt="1 Star" />
+	        </div>
+	        <div class="browse-videos-date">[var.lang_added]:&nbsp;<!--[hot_videos.date_uploaded;block=div;comm]--></div>
+	      </li>	      
           </ul>
         </div>
       </div>
@@ -56,7 +66,7 @@
   </div>
   <!--End Video Browser Container-->
   <div class="container-wide-footer"></div>
-  <!-- Pagination start -->
+    <!-- Pagination start -->
 <br />
 <br />
 <div align="center">
@@ -67,11 +77,8 @@
 <br />
 <!-- Pagination end -->
 
-
   </div>
   <!--End Right Column-->
-
-
     <div class="clear-fix"></div>
 </div>
 <div class="clear-fix"></div>

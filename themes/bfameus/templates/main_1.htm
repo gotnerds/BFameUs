@@ -165,7 +165,7 @@
         	  <option value="videos">[var.lang_word_videos]</option>
               <!--option value="audios">[var.lang_word_audios]<!--[onload;block=option;when [var.enable_audio]=1;comm]--><!--/option-->
               <!--option value="images">[var.lang_word_images]<!--[onload;block=option;when [var.enable_images]=1;comm]--><!--/option-->
-              <option value="groups">[var.lang_groups]</option>
+              <!--option value="groups">[var.lang_groups]</option-->
               <option value="blogs">[var.lang_blogs]<!--[onload;block=option;when [var.enable_blogs]=1;comm]--></option>
         	</select>
         	<input autocomplete="off" id="keyword" name="keyword" value="Search [var.site_name]" onclick="clickclear(this, 'Search [var.site_name]')" onblur="clickrecall(this,'Search [var.site_name]')" style="font-family: verdana; font-weight:bold; font-size: 10pt;  height:18px; width:188px; color:#FFFFFF; border: 1px inset #F5F5F5; background-color: #7AB0D8" />
@@ -218,17 +218,21 @@
           <div id="nav-main">
             <ul>
               <li><a href="[var.base_url]">[var.lang_home]</a></li>
-              <li><a href="videos/load/recent">[var.lang_word_videos]</a></li>
+              <li><a href="uploader.php">[var.lang_upload]</a></li>
+              <li><a href="toprated.php">Top-10</a></li>
+              <li><a href="videos/load/recent">Favorites</a></li>
               <li><a href="genres.php">Genres</a></li>
+              <li><a href="hot_videos.php">Hot</a></li>
+              <!-- li><a href="videos/load/recent">[var.lang_word_videos]</a></li-->
               <!-- li><a href="audios/load/recent">[var.lang_word_audios]</a><!--[onload;block=li;when [var.enable_audio]=1;comm]--><!--/li-->
               <!-- li><a href="albums/load/recent">[var.lang_word_images]</a><!--[onload;block=li;when [var.enable_images]=1;comm]--><!--/li-->
               <li><a href="blogs/load/recent">[var.lang_blogs]</a><!--[onload;block=li;when [var.enable_blogs]=1;comm]--></li>
-              <li><a href="groups">[var.lang_groups]</a></li>
-              <li><a href="people">[var.lang_people]</a></li>
+              <!-- li><a href="groups">[var.lang_groups]</a></li-->
+              <!-- li><a href="people">[var.lang_people]</a></li-->
               <li><a href="news.php">[var.lang_news]</a><!-- just a space filler in top menu when images are off--><!--[onload;block=li;when [var.enable_images]=0;comm]--></li>
               <li><a href="forum">Forum</a><!--[onload;block=li;when [var.enable_forum]=1;comm]--></li>
               <!-- li><a href="upload-media">[var.lang_upload]</a></li-->
-              <li><a href="uploader.php">[var.lang_upload]</a></li>
+             
             </ul>
           </div>
           <!--End Main Navigation-->
