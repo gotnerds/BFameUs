@@ -234,4 +234,3 @@ var ahahscript = {
 	}
 
 };
-

@@ -59,11 +59,11 @@ $submenu_content = '
 
 if ($top_menu == 'flagged'){
 $submenu_content = '
-<li><div align="center"><a href="flagged_comments.php?type=1&action=0&sort=1"'.$active_button1.'>'.$lang_word_videos.'</a></div></li>
-<li><div align="center"><a href="flagged_comments.php?type=2&action=0&sort=1"'.$active_button2.'>'.$lang_word_Audio.'</a></div></li>
-<li><div align="center"><a href="flagged_comments.php?type=3&action=0&sort=1"'.$active_button3.'>'.$lang_blogs.'</a></div></li>
-<li><div align="center"><a href="flagged_comments.php?type=4&action=0&sort=1"'.$active_button4.'>'.$lang_pictures.'</a></div></li>
-<li><div align="center"><a href="flagged_comments.php?type=5&action=0&sort=1"'.$active_button5.'>'.$lang_groups.'</a></div></li>
+<li><div align="center"><a href="flagged_comments.php?type=1&action=0&sort=1"'.$active_button1.'>'.$lang_word_videos.'</a></div></li>';
+// <li><div align="center"><a href="flagged_comments.php?type=2&action=0&sort=1"'.$active_button2.'>'.$lang_word_Audio.'</a></div></li>
+// <li><div align="center"><a href="flagged_comments.php?type=3&action=0&sort=1"'.$active_button3.'>'.$lang_blogs.'</a></div></li>
+// <li><div align="center"><a href="flagged_comments.php?type=4&action=0&sort=1"'.$active_button4.'>'.$lang_pictures.'</a></div></li>
+$submenu_content .= '<li><div align="center"><a href="flagged_comments.php?type=5&action=0&sort=1"'.$active_button5.'>'.$lang_groups.'</a></div></li>
 <li><div align="center"><a href="flagged_comments.php?type=6&action=0&sort=1"'.$active_button6.'>'.$lang_profiles.'</a></div></li>';
 }
 
@@ -107,21 +107,21 @@ $submenu_content = '
 //Media Menus
 if ($side_menu == 'media'){
 $submenu_left = '
-<li> &nbsp;- <a href="videos.php">'.$lang_word_videos.'</a></li>
-<li> &nbsp;- <a href="audio.php">'.$lang_word_Audio.'</a></li>
-<li> &nbsp;- <a href="blogs.php">'.$lang_blogs.'</a></li>
-<li> &nbsp;- <a href="images.php">'.$lang_pictures.'</a></li>';
+<li> &nbsp;- <a href="videos.php">'.$lang_word_videos.'</a></li>';
+// <li> &nbsp;- <a href="audio.php">'.$lang_word_Audio.'</a></li>
+// <li> &nbsp;- <a href="blogs.php">'.$lang_blogs.'</a></li>
+// <li> &nbsp;- <a href="images.php">'.$lang_pictures.'</a></li>';
 }
 
 
 if ($side_menu == 'flagged'){
 $submenu_left = '
-<li> &nbsp;- <a href="flagged_comments.php?type=1&action=0&sort=1">'.$lang_word_videos.'</a></li>
-<li> &nbsp;- <a href="flagged_comments.php?type=2&action=0&sort=1">'.$lang_word_Audio.'</a></li>
-<li> &nbsp;- <a href="flagged_comments.php?type=3&action=0&sort=1">'.$lang_blogs.'</a></li>
-<li> &nbsp;- <a href="flagged_comments.php?type=4&action=0&sort=1">'.$lang_pictures.'</a></li>
-<li> &nbsp;- <a href="flagged_comments.php?type=5&action=99&sort=1">'.$lang_groups.'</a></li>
-<li> &nbsp;- <a href="flagged_comments.php?type=6&action=99&sort=1">'.$lang_profiles.'</a></li>';
+<li> &nbsp;- <a href="flagged_comments.php?type=1&action=0&sort=1">'.$lang_word_videos.'</a></li>';
+// <li> &nbsp;- <a href="flagged_comments.php?type=2&action=0&sort=1">'.$lang_word_Audio.'</a></li>
+// <li> &nbsp;- <a href="flagged_comments.php?type=3&action=0&sort=1">'.$lang_blogs.'</a></li>
+// <li> &nbsp;- <a href="flagged_comments.php?type=4&action=0&sort=1">'.$lang_pictures.'</a></li>
+// <li> &nbsp;- <a href="flagged_comments.php?type=5&action=99&sort=1">'.$lang_groups.'</a></li>
+$submenu_left .= '<li> &nbsp;- <a href="flagged_comments.php?type=6&action=99&sort=1">'.$lang_profiles.'</a></li>';
 }
 
 
@@ -163,19 +163,19 @@ $menu_powertool .=  '<li> &nbsp;-
 //Index Menus
 if ($side_menu == 'index'){
 $submenu_left = '
-<li> &nbsp;- <a href="videos.php">'.$lang_word_videos.'</a></li>
-<li> &nbsp;- <a href="audio.php">'.$lang_word_Audio.'</a></li>
-<li> &nbsp;- <a href="blogs.php">'.$lang_blogs.'</a></li>
-<li> &nbsp;- <a href="images.php">'.$lang_pictures.'</a></li>'.$menu_powertool;
+<li> &nbsp;- <a href="videos.php">'.$lang_word_videos.'</a></li>';
+// <li> &nbsp;- <a href="audio.php">'.$lang_word_Audio.'</a></li>
+// <li> &nbsp;- <a href="blogs.php">'.$lang_blogs.'</a></li>
+// <li> &nbsp;- <a href="images.php">'.$lang_pictures.'</a></li>'.$menu_powertool;
 }
 
 //Settings Menus
 if ($side_menu == 'settings'){
 $submenu_left = '
 <li> &nbsp;- <a href="settings_general.php">'.$lang_general_settings.'</a></li>
-<li> &nbsp;- <a href="settings_video.php">'.$lang_video_settings.'</a></li>
-<li> &nbsp;- <a href="settings_pictures.php">'.$lang_picture_settings.'</a></li>
-<li> &nbsp;- <a href="settings_features.php">'.$lang_enabled_features.'</a></li>'.$menu_powertool;
+<li> &nbsp;- <a href="settings_video.php">'.$lang_video_settings.'</a></li>';
+// <li> &nbsp;- <a href="settings_pictures.php">'.$lang_picture_settings.'</a></li>
+// <li> &nbsp;- <a href="settings_features.php">'.$lang_enabled_features.'</a></li>'.$menu_powertool;
 }
 
 //Settings Menus
@@ -191,9 +191,9 @@ $submenu_left = '
 if ($side_menu2 == 'enabled'){
 $submenu_left2 = '
 <li> &nbsp;- <a href="settings_general.php">'.$lang_general_settings.'</a></li>
-<li> &nbsp;- <a href="settings_video.php">'.$lang_video_settings.'</a></li>
-<li> &nbsp;- <a href="settings_pictures.php">'.$lang_picture_settings.'</a></li>
-<li> &nbsp;- <a href="settings_features.php">'.$lang_enabled_features.'</a></li>'.$menu_powertool;
+<li> &nbsp;- <a href="settings_video.php">'.$lang_video_settings.'</a></li>';
+// <li> &nbsp;- <a href="settings_pictures.php">'.$lang_picture_settings.'</a></li>
+// <li> &nbsp;- <a href="settings_features.php">'.$lang_enabled_features.'</a></li>'.$menu_powertool;
 }
 
 

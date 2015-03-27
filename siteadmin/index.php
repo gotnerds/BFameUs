@@ -84,7 +84,7 @@ if ($_POST['submitted'] != "yes" && $_SESSION["admin_logged"] == "ok") {
     //disply home page
     ///////////////////
 
-    include_once ('forum_rss_feed.php');
+    //include_once ('forum_rss_feed.php');
 
     $show_hide = 1;
     $show_notification = 0;

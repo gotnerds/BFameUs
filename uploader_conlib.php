@@ -47,7 +47,7 @@ function kak($msg){
 	print "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n";
 	print "  <html>\n";
 	print "    <head>\n";
-	print "      <title>Uber-Uploader - Free File Upload Progress Bar</title>\n";
+	print "      <title>File-Uploader - Upload Progress Bar</title>\n";
 	print "      <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n";
 	print "      <meta http-equiv=\"Pragma\" content=\"no-cache\">\n";
 	print "      <meta http-equiv=\"cache-control\" content=\"no-cache\">\n";
@@ -59,7 +59,7 @@ function kak($msg){
 	print "      <div align='center'>\n";
 	print        $msg . "\n";
 	print "      <br>\n";
-	print "      <a href=\"http://sourceforge.net/projects/uber-uploader\"><font size='1'>Powered By Uber Uploader</font></a>\n";
+//	print "      <a href=\"http://sourceforge.net/projects/uber-uploader\"><font size='1'>Powered By Uber Uploader</font></a>\n";
 	print "      </div>\n";
 	print "    </body>\n";
 	print "  </html>\n";

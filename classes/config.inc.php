@@ -63,8 +63,8 @@ $config['refresh_to_last_page']			= 'yes';
 //-------------------------------------------------------------------------------------------------------------//
 
 //Thumbnail images
-$config['theme_thumbnail_width']			= '120';			// default theme thumbnail width
-$config['theme_thumbnail_height']			= '90';			// default theme thumbnail height
+$config['theme_thumbnail_width']			= '240';			// default theme thumbnail width
+$config['theme_thumbnail_height']			= '180';			// default theme thumbnail height
 
 //Blog FCKEditor width
 $config['theme_blog_width']				= '700';			// default V3 theme editor width
@@ -75,8 +75,8 @@ $config['theme_embed_height']				= '420';			// default V3 theme height
 
 // Thumbnails upload settings
 $config['create_thumbnail_width']			= '150';			// create max thumbnail width
-$config['create_video_thumb_width'] 		= '120';			// create max video thumbnail width
-$config['create_album_thumb_width'] 		= '120';			// create max audio album thumbnail width
+$config['create_video_thumb_width'] 		= '240';			// create max video thumbnail width
+$config['create_album_thumb_width'] 		= '240';			// create max audio album thumbnail width
 
 // Thumbnails display settings
 $config['display_audio_album_thumb_width']	= '100';			// max audio album thumbnail display width

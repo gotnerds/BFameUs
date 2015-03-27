@@ -1,52 +1,19 @@
-<!--Begin Left Column-->
-<div id="column-left-2">
-  <!--Begin Whats Showing Menu-->
-  <div class="header-narrow"><h3><!--[var.see_more_title;comm]-->&nbsp;[var.lang_word_videos]</h3></div>
-  <div class="whats-showing">
-    <ul>
-      <li><a href="videos/load/featured">[var.lang_featured]</a></li>
-      <li><a href="videos/load/viewed">[var.lang_most_viewed]</a></li>
-      <li><a href="videos/load/recent">[var.lang_most_recent]</a></li>
-      <li><a href="videos/load/comments">[var.lang_most_comments]</a></li>
-    </ul>
-  </div>
-  <div class="container-narrow-bottom"></div>
-  <!--End Whats Showing Menu-->
-  <!--Begin Categories Menu-->
-  <div class="header-narrow"><h3>[var.lang_video_categories]</h3></div>
-  <div class="whats-showing">
-    <ul>
-      <li><a href="category/[blk1.channel_name_seo;block=li]"><!--[blk1.channel_name;block=li;ope=max:25;maxhtml;comm]--></a>&nbsp;-&nbsp;(<!--[blk1.vid_count;comm]-->)</li>
-    </ul>
-  </div>
-  <div class="container-narrow-bottom"></div>
-  <!--End Categories Menu-->
-  <!--Begin Popular Videos Tag Cloud-->
-  <div class="header-narrow"><h3>[var.lang_tags_popular_videos]</h3></div>
-  <div class="whats-showing"><!--[var.tag_cloud_block;htmlconv=no;comm]--></div>
-  <div class="container-narrow-bottom"></div>
-  <!--End Popular Videos Tag Cloud-->
-  <!--Begin Left Advert-->
-  <div class="container-narrow-top"></div>
-  <div id="advert-left"><!--[var.ads_left;htmlconv=no;comm]--></div>
-  <div class="container-narrow-bottom"></div>
-  <!--End Left Advert-->
-</div>
-<!--End Left Column-->
-
-<!--Begin Right Column-->
-  <div id="column-right-2">
+<div id="column-wide">
  <!--Begin Video Browser. (Most Recent Videos)-->
-  <div class="header-wide">Genres</div>
+  <!-- <div class="header-wide">Genres</div> -->
  <!--Begin Video Browser Container-->
   <div class="container-wide">
     <div class="browse-videos" style="height: [var.ajax_height]px;">
       <div id="videos-ajax">
         <div id="videoajax">
           <ul>
-	      <li>
-	        <a href="category/[all_categories.channel_name_seo;block=li]"><div class="browse-videos-title"><!--[all_categories.channel_name;htmlconv=no;ope=max:14;maxhtml;block=div;comm]--></div></a>
-	        <a href="category/[all_categories.channel_name_seo;block=li]"><img src="uploads/thumbs/[all_categories.video_id;block=div].jpg" title="<!--[all_categories.channel_name;htmlconv=no;block=div;comm]-->" width="[var.theme_thumbnail_width]" height="[var.theme_thumbnail_height]" alt="[all_categories.channel_name]" /></a>
+	      <li><!-- 
+	        <a href="category/[all_categories.channel_name_seo;block=li]">
+            <div class="browse-videos-title">--><!--<!--[all_categories.channel_name;htmlconv=no;ope=max:14;maxhtml;block=div;comm]-->--><!--</div>
+          </a> -->
+	        <a href="category/[all_categories.channel_name_seo;block=li]">
+            <img src="uploads/thumbs/[all_categories.channel_name_seo;block=li].jpg" title="<!--[all_categories.channel_name;htmlconv=no;block=div;comm]-->" width="[var.theme_thumbnail_width]" height="[var.theme_thumbnail_height]" alt="[all_categories.channel_name]" />
+          </a>
 	      </li>
           </ul>
         </div>
@@ -59,11 +26,11 @@
   <!-- Pagination start -->
 <br />
 <br />
-<div align="center">
+<!-- <div align="center">
   <div id="pagination">
     <ul>[var.show_pages;htmlconv=no]</ul>
   </div>
-</div>
+</div> -->
 <br />
 <!-- Pagination end -->
 

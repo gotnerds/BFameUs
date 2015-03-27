@@ -4,11 +4,11 @@
 
 
 //General settings
-$config["from_system_name"] = "Video Site Team";
-$config["notifications_from_email"] = "linish@localmail.altd.in";
+$config["from_system_name"] = "BFAMEUS Team";
+$config["notifications_from_email"] = "i.gitter@gotnerds.com";
 $config["site_name"] = "BFAMEUS";
 $config["date_format"] = "m-d-y";
-$config["site_base_url"] = "http://bfameus-local.com";
+$config["site_base_url"] = "http://bfameus.gotnerds.com";
 $config["delete_original"] = "yes";
 $config["delete_avi"] = "yes";
 $config["path_to_mencoder"] = "/usr/bin/mencoder";
@@ -17,7 +17,7 @@ $config["path_to_flvtool2"] = "/usr/bin/flvtool2";
 $config["auto_approve_videos"] = "yes";
 $config["maximum_size_human_readale"] = "100kb";
 $config["auto_approve_profile_photo"] = "no";
-$config["debug_mode"] = "yes";
+$config["debug_mode"] = "no";
 $config["allow_multiple_video_comments"] = "yes";
 $config["auto_play_index"] = "false";
 $config["auto_play"] = "false";
