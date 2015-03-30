@@ -114,7 +114,7 @@ if ( $procede == true ) {
 	$first_name		= trim(mysql_real_escape_string( $_POST['first_name'] ));
 	$last_name 		= trim(mysql_real_escape_string( $_POST['last_name'] ));
 	$email_address 	= trim(mysql_real_escape_string( $_POST['email_address'] ));
-	$email_address2 	= trim(mysql_real_escape_string( $_POST['email_address2'] ));
+	$email_address2 = trim(mysql_real_escape_string( $_POST['email_address2'] ));
 	$user_name 		= trim(mysql_real_escape_string( $_POST['user_name'] ));
 	$password 		= trim(mysql_real_escape_string( $_POST['password'] ));
 	$confirm_password = trim(mysql_real_escape_string( $_POST['confirm_password'] ));
@@ -123,6 +123,7 @@ if ( $procede == true ) {
 	$dob_day		= (int) mysql_real_escape_string( $_POST['dob_day'] );
 	$dob_year		= (int) mysql_real_escape_string( $_POST['dob_year'] );
 	$zip_code		= (int) mysql_real_escape_string( $_POST['zip_code'] );
+	$user_group     = trim(mysql_real_escape_string( $_POST['user_group'] ));
 
 	if ( $_POST['terms'] == 'yes' ) {
 		$checked = 'checked=\"checked\"';
@@ -307,8 +308,8 @@ if ($procede == true) {
 		if ( $send_confirm_email == 'yes' ) {
 
 			// insert new user record
-			$sql = "INSERT into member_profile (email_address, user_name, password, passwordSalt, first_name, last_name, zip_code, country, user_ip, birthday, account_status, account_type, date_created, random_code)
-    				  VALUES ('$email_address', '$user_name', '$password', '$passwordSalt', '$first_name', '$last_name', '$zip_code', '$country_list', '$user_ip', '$birthday', 'new', 'standard', NOW(), '$random_code')";
+			$sql = "INSERT into member_profile (user_group, email_address, user_name, password, passwordSalt, first_name, last_name, zip_code, country, user_ip, birthday, account_status, account_type, date_created, random_code)
+    				  VALUES ('$user_group', '$email_address', '$user_name', '$password', '$passwordSalt', '$first_name', '$last_name', '$zip_code', '$country_list', '$user_ip', '$birthday', 'new', 'standard', NOW(), '$random_code')";
 
     			@mysql_query($sql) or die($config['error_26']);//error
 
@@ -363,8 +364,8 @@ if ($procede == true) {
 		} else {
 
 			// insert new user record
-			$sql = "INSERT into member_profile (email_address, user_name, password, passwordSalt, first_name, last_name, zip_code, country, birthday, account_status, account_type, date_created, random_code)
-    				  VALUES ('$email_address', '$user_name', '$password', '$passwordSalt', '$first_name', '$last_name', '$zip_code', '$country_list', '$birthday', 'active', 'standard', NOW(), '$random_code')";
+			$sql = "INSERT into member_profile (user_group, email_address, user_name, password, passwordSalt, first_name, last_name, zip_code, country, birthday, account_status, account_type, date_created, random_code)
+    				  VALUES ('$user_group', '$email_address', '$user_name', '$password', '$passwordSalt', '$first_name', '$last_name', '$zip_code', '$country_list', '$birthday', 'active', 'standard', NOW(), '$random_code')";
 
     			@mysql_query($sql) or die($config['error_26']);//error
 

@@ -14,7 +14,21 @@
                   <input type="text" name="user_name" size="20" value="[var.user_name]" maxlength="24" />&nbsp;&nbsp;<a onclick="javascript:ahahscript.ahah('[var.base_url]/join.php?action=check_user&amp;new_user_name='+ document.capform.user_name.value, 'check_user', '', 'GET', '', this);" style="cursor:pointer;">Check Availability</a>
                 </div>
               </div>
-              <br /><br />              
+              <br /><br />    
+              <!-- user group start here -->
+		      <div>
+		        <div style="margin-left:52px; float:left;display:block;min-width:100px;">
+		          <b>User group: </b>
+		        </div>
+		        <div style="margin-right:30px; float:left;">
+		           <input type="radio" value="standard_mod" name="user_group"  checked="checked"/>&nbsp;&nbsp;Artist
+		           <input type="radio" value="member" name="user_group"/>&nbsp;&nbsp;Fan 
+		        </div>
+		      </div>
+      		 <br />
+      		 <br />
+       		 <!-- user group end here -->
+       		           
               <div>
                 <div style="margin-left:52px; margin-top:10px;">
                   <input type="submit" class="button-form" value="[var.lang_register_now]" name="registe_r" />

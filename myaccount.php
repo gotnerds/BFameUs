@@ -13,6 +13,9 @@ include_once ('classes/sessions.php');
 include_once ('classes/login_check.php');
 include_once ('online.php');
 
+if($_SESSION['user_group'] == 'member') {
+	header("Location: index.php");
+}
 
 // load required javascripts used in main_1.htm
 $thickbox		= 1;

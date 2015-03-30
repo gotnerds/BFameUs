@@ -39,9 +39,16 @@ $config['notification_error'] = $lang_error;
 $page_title = $lang_upload_video;
 
 if ($_SESSION['user_id'] == "") {
-	header("Location: $login_out_link");;
+	header("Location: $login_out_link");
 	die();
 }
+
+
+//if fan redirect to profile page
+if($_SESSION['user_group'] == 'member') {
+	header("Location: fantoartist.php?id=".$_SESSION['user_id']);
+}
+
 
 /*
 if ( $_SESSION['user_group'] == 'member' ) {

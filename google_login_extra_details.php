@@ -47,6 +47,7 @@ if(isset($_SESSION['google_user_profile']['google_user_id']) && $_SESSION['googl
             $google_user_last_name = $_SESSION['google_user_profile']['google_user_last_name'];
             $google_user_gender = ucfirst($_SESSION['google_user_profile']['google_user_gender']);
             $user_name = $_POST['user_name'];
+            $user_group     = trim(mysql_real_escape_string( $_POST['user_group'] ));
             
             $random_code	= randomcode();
             $password_email	= generate_random_password();
@@ -56,8 +57,8 @@ if(isset($_SESSION['google_user_profile']['google_user_id']) && $_SESSION['googl
             $send_confirm_email = $config['enabled_features_confirmation_email'];
             
             // Insert new user record
-			$sql = "INSERT into member_profile (email_address, user_name, password, passwordSalt, first_name, last_name, user_ip, account_status, account_type, date_created, random_code, gender, google_id)
-    				  VALUES ('$google_user_email', '$user_name', '$password', '$passwordSalt', '$google_user_first_name', '$google_user_last_name', '$user_ip', 'active', 'standard', NOW(), '$random_code', '$gender', $google_user_id)";
+			$sql = "INSERT into member_profile (user_group, email_address, user_name, password, passwordSalt, first_name, last_name, user_ip, account_status, account_type, date_created, random_code, gender, google_id)
+    				  VALUES ('$user_group','$google_user_email', '$user_name', '$password', '$passwordSalt', '$google_user_first_name', '$google_user_last_name', '$user_ip', 'active', 'standard', NOW(), '$random_code', '$gender', $google_user_id)";
 
     			@mysql_query($sql) or die($config['error_26']);//error
 
