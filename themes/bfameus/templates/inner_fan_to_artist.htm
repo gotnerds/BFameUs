@@ -42,7 +42,11 @@ cal2.showYearNavigation();
 		<td width="5" height="3" bgcolor="#FFFFFF" align="left" class="default_text">&nbsp;
         </td>
 		<td width="393" height="3" bgcolor="#FFFFFF" align="left" class="default_text">
-          <textarea rows="3" name="about_me" cols="46">[var.about_me;htmlconv=no]</textarea></td>
+          <textarea rows="3" name="about_me" cols="46">[var.about_me;htmlconv=no]</textarea>
+          <div style="color:#ee0000;">
+	    	<font size="3">[var.about_error]</font>
+	      </div>
+         </td>
 	</tr>
 	<tr>
 		<td width="284" height="3" bgcolor="#FFFFFF" align="left" class="default_text" colspan="2">
@@ -67,7 +71,11 @@ cal2.showYearNavigation();
 		<td width="252" height="3" bgcolor="#F2F2F2" align="left" class="default_text">
         <font size="2">
         &nbsp;
-		<input type="text" name="first_name" size="20" value="[var.first_name]"></font></td>
+		<input type="text" name="first_name" size="20" value="[var.first_name]"></font>
+	    <div style="color:#ee0000;">
+	    	<font size="3">[var.first_name_error]</font>
+	    </div>
+		</td>
 	</tr>
 	<tr>
 		<td width="83" height="2" bgcolor="#F2F2F2" align="right" class="default_text">&nbsp;
@@ -81,7 +89,11 @@ cal2.showYearNavigation();
 		<td width="252" height="2" bgcolor="#F2F2F2" align="left" class="default_text">
         <font size="2">&nbsp;
          </font>
-		<input type="text" name="last_name" size="20" value="[var.last_name]"></td>
+		<input type="text" name="last_name" size="20" value="[var.last_name]">
+		<div style="color:#ee0000;">
+	    	<font size="3">[var.last_name_error]</font>
+	    </div>
+		</td>
 	</tr>
 	<tr>
 		<td width="83" height="2" bgcolor="#F2F2F2" align="right" class="default_text">&nbsp;
@@ -835,7 +847,11 @@ cal2.showYearNavigation();
 		<td width="5" height="40" bgcolor="#FFFFFF" align="left">&nbsp;
         </td>
 		<td width="393" height="19" bgcolor="#FFFFFF">
-        <input type="text" name="email_address" size="25" value="[var.email_address]" /></td>
+        <input type="text" name="email_address" size="25" value="[var.email_address]" />
+        <div style="color:#ee0000;">
+	    	<font size="3">[var.email_error]</font>
+	    </div>
+        </td>
 	</tr>
 	
 	<tr>

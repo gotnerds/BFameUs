@@ -28,6 +28,11 @@ if ($id == '') {
 	ErrorDisplay1($config["invalid_request"]);
     	die();
 }
+$proceed = true;
+$first_name_error = '';
+$last_name_error = '';
+$about_error = '';
+$email_error = '';
 
 //check permissions again
 /////////////////////////
@@ -53,75 +58,96 @@ if (mysql_num_rows($query) == 0) {
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PROCESS SUBMITTED FORM >>>>>>>>>>>>>>>>>>
 
+
+
 if (isset($_POST['submit'])) {
-
-	//run checks if form was fully filled in
-	foreach($_POST as $key => $value ) {
-
-		$value = trim(mysql_real_escape_string($value));
-
-
-		//######################################################################### TODO #######################################
-		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//
-		// we need valid email check - and also check if email is used by another !!!
-		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		//remmove approve picture (its not in same table)
-		if($key !='approved') {
-
-			//MD5 password
-			if($key =='password' && $value !='') {
-				$value = md5($value);
-			}
-
-			$sql = "$key = '$value',";
-			if ($key =='uid'|| $key =='submit' || $key =='id' || $key =='delete_avatar'){
-				$sql ='';
-			}
-
-			//ignore blank password
-			if($key =='password' && $value ==''){
-				$sql ='';
-			}
-
-			$sql1 = $sql1.$sql;
-
-		} else {
-			$sql2 = "$key = '$value'";
-		}
+	
+	if($_POST['first_name']=='') {
+		$first_name_error =  'First Name Required';
+		$proceed = false;
 	}
-
-
-	//Update mysql database (members profile)
-
-	$sql1 = substr($sql1,0,-1);
-	$sql ="UPDATE member_profile SET $sql1 WHERE user_id = $member_id";
-	@mysql_query($sql);
-
-	//notifications
-	$show_notification =1;
-	$message = notifications(1);
-
-	//Delete members image
-	if ($_POST['delete_avatar'] == 'yes'){
-
-		//get image name
-		$sql = "SELECT * FROM pictures WHERE user_id = $member_id";
-		$result = @mysql_fetch_array(@mysql_query($sql));
-		$existing_file = $result['file_name'];
-
-		//delete image from dbase
-		$sql ="DELETE FROM pictures WHERE user_id = $member_id";
+	if($_POST['last_name']=='') {
+		$last_name_error=  ' Last Name Required';
+		$proceed = false;
+	}
+	if($_POST['about_me']=='') {
+		$about_error = ' About Me Required';
+		$proceed = false;
+	}
+	if ( $_POST['email_address'] == '' || !eregi("^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-z]{2,3})$", $_POST['email_address']) ) {
+		$email_error = ' Please enter a valid email address';
+		$proceed = false;
+	}
+	
+	if ( $proceed == true ) {
+		//run checks if form was fully filled in
+		foreach($_POST as $key => $value ) {
+	
+			$value = trim(mysql_real_escape_string($value));
+	
+	
+			//######################################################################### TODO #######################################
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			//
+			// we need valid email check - and also check if email is used by another !!!
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+			//remmove approve picture (its not in same table)
+			if($key !='approved') {
+	
+				//MD5 password
+				if($key =='password' && $value !='') {
+					$value = md5($value);
+				}
+	
+				$sql = "$key = '$value',";
+				if ($key =='uid'|| $key =='submit' || $key =='id' || $key =='delete_avatar'){
+					$sql ='';
+				}
+	
+				//ignore blank password
+				if($key =='password' && $value ==''){
+					$sql ='';
+				}
+	
+				$sql1 = $sql1.$sql;
+	
+			} else {
+				$sql2 = "$key = '$value'";
+			}
+		}
+	
+	
+		//Update mysql database (members profile)
+	
+		$sql1 = substr($sql1,0,-1);
+		$sql ="UPDATE member_profile SET $sql1 WHERE user_id = $member_id";
 		@mysql_query($sql);
-
-		//delete image from server
-		$mypicture = $config['site_base_url'].'/pictures/'.$existing_file;
-		@unlink($mypicture);
-
+	
 		//notifications
 		$show_notification =1;
 		$message = notifications(1);
+	
+		//Delete members image
+		if ($_POST['delete_avatar'] == 'yes'){
+	
+			//get image name
+			$sql = "SELECT * FROM pictures WHERE user_id = $member_id";
+			$result = @mysql_fetch_array(@mysql_query($sql));
+			$existing_file = $result['file_name'];
+	
+			//delete image from dbase
+			$sql ="DELETE FROM pictures WHERE user_id = $member_id";
+			@mysql_query($sql);
+	
+			//delete image from server
+			$mypicture = $config['site_base_url'].'/pictures/'.$existing_file;
+			@unlink($mypicture);
+	
+			//notifications
+			$show_notification =1;
+			$message = notifications(1);
+		}
 	}
 }
 
@@ -224,7 +250,6 @@ $blog_count = @mysql_num_rows($query);
 // show disabled messages
 //TO DO - check settings.php if picture etc are disabled
 //if yes set $pictures_count = $lang_disabled , etc etc
-
 
 // disply page
 $template = "templates/inner_edit_member.htm";
