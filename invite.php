@@ -35,7 +35,7 @@ if ($_SESSION['user_id'] == "") {
 $sql = "SELECT * FROM friends WHERE user_id = $user_id AND friends_id = $member_id OR friends_id = $user_id AND user_id = $member_id";
 $result = @mysql_query($sql);
 if (@mysql_num_rows($result) > 0) {
-    ErrorDisplay1($config['error_5']); //you have already invited ....
+    ErrorDisplay1($config['error_already_following']); //you have already invited ....
     die();
 }
 
@@ -55,7 +55,7 @@ if (@mysql_num_rows($query) < 0) {
 //Everything Good sofar - Invite member
 ////////////////////////////////////////
 $invite_id = randomcode();
-$sql = "INSERT INTO friends (user_id, invitation_id, friends_id, invitation_type, blocked_users, invitation_status, my_username, friends_username, todays_date) VALUES ($user_id, '$invite_id', $member_id, 'online', 'no', 'pending', '$user_name', '$friends_username', NOW())";
+$sql = "INSERT INTO friends (user_id, invitation_id, friends_id, invitation_type, blocked_users, invitation_status, my_username, friends_username, todays_date) VALUES ($user_id, '$invite_id', $member_id, 'online', 'no', 'accepted', '$user_name', '$friends_username', NOW())";  // default invitation_status was 'pending'
 @mysql_query($sql);
 
 
@@ -78,6 +78,7 @@ if (notification_preferences($member_id, "friendsinvite") == true) {
         $my_real_name = $user_name . ' (' . $result_1['email_address'] . ')'; //this will create something like: inmotion (me@gmail.com)
     }
 
+	/*  ** Currently not using email functionality **
     //send email --------resuable------------------------------------->>
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     $email_template = 'email_templates/invitemessage_internal.htm';
@@ -93,13 +94,15 @@ if (notification_preferences($member_id, "friendsinvite") == true) {
     //load postage.php
     include ('includes/postage.php');
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	
+	*/ 
 
 }
 
 
 //Show Success
 ///////////////
-ErrorDisplay1($config['error_4']); //invitation sent out
+ErrorDisplay1($config['error_25']); //invitation sent out BEFORE IT WAS error_4
 die();
 
 //END

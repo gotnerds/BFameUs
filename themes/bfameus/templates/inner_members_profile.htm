@@ -10,7 +10,7 @@
         <br />
         <ul id="MP_Left_1_content_list1" style="top:-12px;">
           <li><!--[onload_828;block=li;when [var.profile_menu]=2;comm]--><a href="[var.base_url]/emailcompose.php?uid=[var.member_id]">[var.lang_email_me]</a></li>
-          <li><!--[onload_829;block=li;when [var.profile_menu]=2;comm]--><a href="[var.base_url]/invite.php?type=1&uid=[var.member_id]" rel="gb_page_center[850, 250]">[var.lang_add_friends]</a></li>
+          <li><!--[onload_829;block=li;when [var.profile_menu]=2;comm]--><!--[onload;block=li;when [var.user_type]=artist;comm]--><a href="[var.base_url]/invite.php?type=1&uid=[var.member_id]" rel="gb_page_center[850, 250]">[var.lang_follow_me]<!--[var.lang_add_friends]--></a></li>
           <li><!--[onload_830;block=li;when [var.profile_menu]=2;comm]--><a href="javascript:void(0)" onClick="javascript:ahahscript.ahah('[var.base_url]/flag_ajax.php?flag_type=member_profile&abuse=[var.member_id]', 'Ajax-General-Messages', '', 'GET', '', this);">[var.lang_flag_profile]</a></li>
           <li><!--[onload_826;block=li;when [var.custom_profile]=1;comm]--><a href="[var.base_url]/addons/customprofile/index.php?type=1&uid=[var.member_id]"  rel="gb_page_center[870, 450]">[var.lang_customize_profile]</a></li>
           <li><!--[onload_827;block=li;when [var.profile_menu]=1;comm]--><a href="[var.base_url]/edit/editprofile.php?id=[var.member_id]"  rel="gb_page_center[870, 450]">[var.lang_edit_profile]</a></li>
@@ -29,7 +29,7 @@
     <!-- MP Left 1 END -->
     <!-- MP Left 2 -->
     <div id="MP_Left_2">
-      <div id="MP_Left_2_top">&nbsp;&nbsp;[var.lang_my_friends]</div>
+      <div id="MP_Left_2_top">&nbsp;&nbsp;[var.follow_label]<!--[var.lang_my_friends]--></div>
       <div id="MP_Left_2_content">
         <!-- My friends start -->
         <div class="MyFriends">

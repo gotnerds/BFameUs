@@ -20,11 +20,18 @@ $member_id	= '';
 $proceed	= true;
 
 $user = mysql_real_escape_string($_GET['user']);
+$user_type = "member";
+$follow_label = "Following";
 
 if ($user) {
-	$sql = mysql_query("SELECT user_id FROM member_profile WHERE user_name = '$user'");
+	$sql = mysql_query("SELECT user_id,user_group FROM member_profile WHERE user_name = '$user'");
     	$row = mysql_fetch_array($sql);
-    	$member_id = $row['user_id'];
+    	$member_id = $row['user_id']; 
+		$user_group = $row['user_group'];
+		if( $user_group == "standard_mod" ){
+			$user_type = "artist";
+			$follow_label = "Followers";
+		}
 }
 
 if ( $member_id == ''  ) {
